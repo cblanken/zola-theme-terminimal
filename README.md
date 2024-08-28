@@ -1,12 +1,10 @@
 # Terminimal
+This is a fork of [zola-theme-terminimal](https://github.com/pawroman/zola-theme-terminimal) by [pawroman](https://github.com/pawroman).
 
 [![Build Status](https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment)
 ![No JavaScript](https://img.shields.io/badge/JavaScript-none-brightgreen.svg)
 
 ![Screenshot](../master/screenshot.png?raw=true)
-
-See the live demo (of the default configuration) here:
-https://pawroman.github.io/zola-theme-terminimal/
 
 Tested with Zola v0.19.2.
 

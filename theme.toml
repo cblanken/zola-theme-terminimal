@@ -8,14 +8,14 @@ min_version = "0.11.0"
 demo = "https://pawroman.github.io/zola-theme-terminimal/"
 
 [author]
-name = "Paweł Romanowski"
-homepage = "https://github.com/pawroman"
+name = "Cameron Blankenbuehler"
+homepage = "https://github.com/cblanken/zola-theme-terminimal"
 
 # The original theme this one's been forked off.
 [original]
-author =  "Radosław Kozieł"
-homepage = "https://radoslawkoziel.pl/"
-repo = "https://github.com/panr/hugo-theme-terminal"
+author = "Paweł Romanowski"
+homepage = "https://github.com/pawroman"
+repo = "https://github.com/pawroman/zola-theme-terminimal"
 
 [extra]
 
