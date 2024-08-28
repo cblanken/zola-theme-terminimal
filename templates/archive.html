@@ -9,7 +9,10 @@
         <h1 class="post-title">{{ page.title }}</h1>
 
         {% set section = get_section(path="_index.md") %}
-
-        {{ post_macros::list_posts(pages=section.pages) }}
+            {% for sub_dir in page.extra.archive_dirs %}
+              {% set sub_section = get_section(path=sub_dir ~ "/_index.md") %}
+              <h2>{{ sub_section.title }}</h2>
+              {{ post_macros::list_posts(pages=sub_section.pages) }}
+            {% endfor %}
     </div>
 {% endblock content %}
