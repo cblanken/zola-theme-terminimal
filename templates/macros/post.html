@@ -81,10 +81,15 @@
             {% continue %}
         {% endif -%}
         <li class="post-list">
-            <a href="{{ page.permalink | safe }}">
-                <span class="post-date">{{ page.date }}</span>
-                :: <span class="post-list-title">{{ page.title }}</span></a>
-            {{ post_macros::tags(page=page, short=true) }}
+            <div class="post-date">{{ page.date }}</div>
+            <div class="post-title-tags">
+                <a href="{{ page.permalink | safe }}">
+                    <span class="post-list-title">{{ page.title }}</span>
+                </a>
+                <div>
+                    {{ post_macros::tags(page=page, short=true) }}
+                </div>
+            <div>
         </li>
     {% endfor -%}
     </ul>
@@ -95,10 +100,9 @@
     {%- if page.taxonomies and page.taxonomies.tags %}
         <span class="post-tags-inline">
             {%- if short %}
-                ::
                 {%- set sep = "," -%}
             {% else %}
-                :: tags:&nbsp;
+                tags:&nbsp;
                 {%- set sep = "&nbsp;" -%}
             {% endif -%}
             {%- for tag in page.taxonomies.tags | sort | unique(case_sensitive=false) %}

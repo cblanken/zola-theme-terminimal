@@ -11,7 +11,7 @@
         {% set section = get_section(path="_index.md") %}
             {% for sub_dir in page.extra.archive_dirs %}
               {% set sub_section = get_section(path=sub_dir ~ "/_index.md") %}
-              <h2>{{ sub_section.title }}</h2>
+              <h2 id={{sub_section.title}}><a class="zola-anchor" href="#{{sub_section.title}}">{{ sub_section.title }}</a></h2>
               {{ post_macros::list_posts(pages=sub_section.pages) }}
             {% endfor %}
     </div>
