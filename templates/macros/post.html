@@ -3,6 +3,13 @@
         <div class="post-content">
             {{ page.description | safe }}
         </div>
+        <div>
+            <!-- &#xFE0E; -- force text style - some devices render this as emoji -->
+            <a class="read-more button" href="{{ page.permalink | safe }}">
+                <span class="button__text">Read more</span>&nbsp;
+                <span class="button__icon">&#8617;&#xFE0E;</span>
+            </a>
+        </div>
     {% elif summary and page.summary %}
         <div class="post-content">
             {{ page.summary | safe }}
@@ -87,7 +94,7 @@
                     <span class="post-list-title">{{ page.title }}</span>
                 </a>
                 <div>
-                    {{ post_macros::tags(page=page, short=true) }}
+                    {{ post_macros::tags(page=page, short=false) }}
                 </div>
             <div>
         </li>
