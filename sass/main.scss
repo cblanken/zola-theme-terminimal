@@ -147,6 +147,7 @@ pre {
 }
 
 blockquote {
+  position: relative;
   border-top: 1px solid var(--accent);
   border-bottom: 1px solid var(--accent);
   margin: 40px 0;
@@ -154,15 +155,6 @@ blockquote {
 
   @media (max-width: $phone-max-width) {
     padding-right: 0;
-  }
-
-  &:before {
-    content: '”';
-    font-family: Georgia, serif;
-    font-size: 3.875rem;
-    position: absolute;
-    left: -40px;
-    top: -20px;
   }
 
   p:first-of-type {
