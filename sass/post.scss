@@ -6,6 +6,7 @@
 }
 
 .post {
+  position: relative;
   width: 100%;
   text-align: left;
   margin: 20px auto;
@@ -108,6 +109,37 @@
 
   h3 {
     font-size: 1.5rem;
+  }
+
+  .toc {
+    @media (max-width: 1400px) {
+      display: none;
+    }
+    position: absolute;
+    top: 0;
+    right: calc(-10vw - 4rem);
+    width: 10vw;
+    min-width: 200px;
+    padding: 1rem;
+    backdrop-filter: brightness(50%);
+    border-top: 4px solid var(--accent);
+    border-bottom: 4px solid var(--accent);
+
+    .toc-header {
+      text-align: center;
+      font-size: 2rem !important;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid;
+      padding-bottom: 4px;
+    }
+
+    .toc-items {
+    }
+
+    .toc-item {
+      font-size: 1.4rem;
+      margin: 0.5rem 0;
+    }
   }
 }
 
