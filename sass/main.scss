@@ -19,6 +19,7 @@ body {
   background-color: var(--background);
   color: var(--color);
   text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" on;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%;
