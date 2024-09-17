@@ -20,9 +20,9 @@
     {% endif %}
 
     <div class="post">
-        {{ post_macros::header(page=page) }}
 
         {% if page.extra.toc and page.toc | length > 0 %}
+        <div class="toc-container">
             <div class="toc">
               <div class="toc-header">Contents</div>
               <ol class="toc-items">
@@ -33,8 +33,10 @@
               {% endfor %}
               </ol>
             </div>
+        </div>
         {% endif %}
 
+        {{ post_macros::header(page=page) }}
         {{ post_macros::content(page=page, summary=false, show_only_description=false) }}
         {{ post_macros::earlier_later(page=page) }}
     </div>
