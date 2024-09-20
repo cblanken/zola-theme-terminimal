@@ -116,23 +116,33 @@
     position: sticky;
     top: 0;
 
+    @media (max-width: 1400px) {
+      position: relative;
+      width: 100%;
+    }
+
     .toc {
-      @media (max-width: 1400px) {
-        display: none;
-      }
-      margin-top: 1rem;
+      --toc-width: 15vw;
       position: absolute;
-      left: calc(-10vw - 3rem);
-      width: 10vw;
+      left: calc(-1 * var(--toc-width) - 2rem);
+      width: var(--toc-width);
       min-width: 200px;
+      margin-top: 1rem;
       padding: 1rem;
       backdrop-filter: brightness(60%);
       border-top: 4px solid var(--accent);
       border-bottom: 4px solid var(--accent);
 
+      @media (max-width: 1400px) {
+        position: relative;
+        left: 0;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
       .toc-header {
         text-align: center;
-        font-size: 1.6rem !important;
+        font-size: 1.5rem;
         margin-bottom: 1rem;
         border-bottom: 2px solid;
         padding-bottom: 4px;
