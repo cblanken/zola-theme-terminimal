@@ -127,6 +127,8 @@
       left: calc(-1 * var(--toc-width) - 2rem);
       width: var(--toc-width);
       min-width: 200px;
+      max-height: 90vh;
+      overflow-y: auto;
       margin-top: 1rem;
       padding: 1rem;
       backdrop-filter: brightness(60%);
