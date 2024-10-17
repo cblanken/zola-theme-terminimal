@@ -1,21 +1,19 @@
 {% extends "index.html" %}
 
-{%- block title -%}
+{% block title %}
 {{ title_macros::title(page_title="Tags", main_title=config.title) }}
-{%- endblock -%}
+{% endblock %}
 
 {% block content %}
     <div class="post">
         <h1 class="post-title">all tags</h1>
 
-        <ul>
+        <div style="display: flex; flex-wrap: wrap; column-gap: 1.1rem;" class="tag-list">
             {% for term in terms %}
-            <li class="tag-list">
                 <a href="{{ term.permalink | safe }}">
-                    {{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
+                    {{ term.name }} ({{ term.pages | length }})
                 </a>
-            </li>
             {% endfor %}
-        </ul>
+        </div>
     </div>
 {% endblock content %}
