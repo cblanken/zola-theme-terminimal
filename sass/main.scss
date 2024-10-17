@@ -29,12 +29,19 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   display: flex;
   align-items: center;
   line-height: 1.3;
   font-weight: 800;
   font-family: Inter, Roboto, Helvetica, 'Noto Sans', Arial, sans-serif;
+  margin-block-start: 0;
+  margin-block-end: 0.25rem;
 }
 
 h1 {
@@ -49,13 +56,19 @@ h3 {
   font-size: 1.2rem;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-size: 1rem;
 }
 
 
 a {
   color: inherit;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 img {
@@ -77,7 +90,8 @@ img {
 }
 
 p {
-  margin-bottom: 20px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 figure {
@@ -85,16 +99,19 @@ figure {
   max-width: 100%;
   margin: 25px 0;
 
-  &.left, img {
+  &.left,
+  img {
     margin-right: auto;
   }
 
-  &.center, img {
+  &.center,
+  img {
     margin-left: auto;
     margin-right: auto;
   }
 
-  &.right, img {
+  &.right,
+  img {
     margin-left: auto;
   }
 
@@ -201,6 +218,7 @@ pre[data-lang=bash] {
 
 pre[data-lang=c] {
   border-color: $code-c;
+
   &::before {
     content: "C";
     background: $code-c;
@@ -216,6 +234,7 @@ pre[data-lang=csharp] {
 
 pre[data-lang=php] {
   border-color: $code-php;
+
   &::before {
     content: "PHP";
     background: $code-php;
@@ -225,6 +244,7 @@ pre[data-lang=php] {
 
 pre[data-lang=powershell] {
   border-color: $code-powershell;
+
   &::before {
     content: "Powershell";
     background: $code-powershell;
@@ -234,6 +254,7 @@ pre[data-lang=powershell] {
 
 pre[data-lang=python] {
   border-color: $code-python;
+
   &::before {
     content: "Python";
     background: $code-python;
@@ -243,6 +264,7 @@ pre[data-lang=python] {
 
 pre[data-lang=rust] {
   border-color: $code-rust;
+
   &::before {
     content: "Rust";
     background: $code-rust;
@@ -268,13 +290,12 @@ pre[data-lang=console],
 pre[data-lang=terminal],
 pre[data-lang=term],
 {
-  &::before {
-    content: "Terminal";
-  }
+&::before {
+  content: "Terminal";
+}
 }
 
-pre[data-lang=file]
-{
+pre[data-lang=file] {
   &::before {
     content: "File";
   }
@@ -319,7 +340,9 @@ table {
   margin: 40px 0;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px dashed var(--accent);
   padding: 10px;
 }
@@ -328,7 +351,8 @@ th {
   color: var(--accent);
 }
 
-ul, ol {
+ul,
+ol {
   margin-left: 30px;
   padding-left: 0;
 
