@@ -31,7 +31,7 @@
 {% macro date(page) %}
     <span class="post-date">
         {%- if page.date %}
-            {{ page.date | date(format="%Y-%m-%d") }}
+            {{ page.date | date(format="%B %d, %Y") }}
         {% endif -%}
     </span>
 {% endmacro post_date %}
@@ -71,11 +71,18 @@
 
 {% macro header(page) %}
     <h1 class="post-title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h1>
+    {%- if not page.no_post_stats %}
     <div class="post-meta-inline">
-        {{ post_macros::date(page=page) }}
+        {%- if page.date %}
+        <span>{{ post_macros::date(page=page) }}</span>&nbsp;&nbsp;⋅&nbsp;&nbsp;
+        <span>{{ page.word_count }} words</span>&nbsp;&nbsp;⋅&nbsp;&nbsp;<span>{{ page.word_count / 130 | round(precision=0) }} min</span>
+        {% endif -%}
     </div>
+    {% endif -%}
 
+    <div>
     {{ post_macros::tags(page=page, short=true) }}
+    </div>
 {% endmacro header %}
 
 
