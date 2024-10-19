@@ -137,11 +137,12 @@ figure {
   }
 }
 
+/* ------------------------- */
+/* Custom code block styles  */
+/* ------------------------- */
 code {
   font-family: Hack, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
   font-feature-settings: normal;
-  background: var(--accent-alpha-20);
-  padding: 2px 6px;
   margin: 0 2px;
   font-size: .95rem;
 }
@@ -166,7 +167,6 @@ pre {
 
 pre[data-lang] {
   position: relative;
-  border: 3px solid $code-border;
 
   &::before {
     content: "Code";
@@ -177,39 +177,43 @@ pre[data-lang] {
     padding-left: 0.5rem;
     width: 100%;
     background: $code-border;
-    color: #222;
+    color: $code-dark;
     font-weight: bold;
     font-family: "Hack" monospace;
   }
 
   code {
     margin-top: 1.5rem;
-  }
 
-  code table {
-    border: none;
-    border-spacing: 10px 0;
-    margin: 0;
-    padding: 0;
-    height: 100%;
+    span {
+      padding-left: 0.25rem;
+    }
 
-    td {
+    table {
       border: none;
+      border-spacing: 10px 0;
+      margin: 0;
       padding: 0;
-      line-height: 1.15rem;
-    }
+      height: 100%;
 
-    td:first-of-type {
-      width: 2rem;
-      text-align: center;
-      vertical-align: top;
-      user-select: none;
+      td {
+        border: none;
+        padding: 0;
+      }
+
+      td:first-of-type {
+        width: 2rem;
+        text-align: center;
+        vertical-align: top;
+        user-select: none;
+      }
     }
   }
+
 }
 
 /* ------------------------- */
-/* Custom code block banners */
+/* Code block banners        */
 /* ------------------------- */
 pre[data-lang=bash] {
   &::before {
@@ -227,9 +231,32 @@ pre[data-lang=c] {
   }
 }
 
+pre[data-lang=diff] {
+  border: none;
+
+  &::before {
+    content: "Diff";
+    background: linear-gradient(to right, $add-color 50%, $del-color 50%);
+    color: $code-dark;
+  }
+}
+
 pre[data-lang=csharp] {
   &::before {
     content: "C#";
+  }
+}
+
+pre[data-lang=eml],
+pre[data-lang=msg] {
+  &::before {
+    content: "Email";
+  }
+}
+
+pre[data-lang=http] {
+  &::before {
+    content: "HTTP";
   }
 }
 
@@ -289,17 +316,45 @@ pre[data-lang=sql] {
 
 pre[data-lang=console],
 pre[data-lang=terminal],
-pre[data-lang=term],
-{
-&::before {
-  content: "Terminal";
-}
+pre[data-lang=term] {
+  &::before {
+    content: "Terminal";
+  }
 }
 
 pre[data-lang=file] {
   &::before {
     content: "File";
   }
+}
+
+/* ------------------------- */
+/* Code line highlights      */
+/* ------------------------- */
+
+code mark {
+  display: block;
+  background: $code-hl;
+  color: $code-light !important;
+}
+
+pre[data-linenos] {
+  tr>td:nth-of-type(1) {
+    text-align: right !important;
+    padding-right: 0.5rem;
+    color: $code-line-num;
+  }
+
+  tr>td:nth-of-type(1) mark {
+    display: block;
+    color: $code-line-num;
+    background: none !important;
+  }
+
+  tr>td:nth-of-type(2) mark {
+    display: block;
+  }
+
 }
 
 blockquote {
