@@ -26,9 +26,16 @@
             <div class="toc">
               <div class="toc-header">Table of Contents</div>
               <ol class="toc-items">
-              {% for h in page.toc %}
+              {% for h1 in page.toc %}
                   <li class="toc-item">
-                    <a href="{{ h.permalink }}">{{ h.title }}</a>
+                    <a href="{{ h1.permalink }}">{{ h1.title }}</a>
+                    <ol>
+                    {% for h2 in h1.children %}
+                      <li class="toc-item">
+                        <a href="{{ h2.permalink }}">{{ h2.title }}</a>
+                      </li>
+                    {% endfor %}
+                    </ol>
                   </li> 
               {% endfor %}
               </ol>

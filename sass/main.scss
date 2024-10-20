@@ -409,20 +409,13 @@ th {
 
 ul,
 ol {
-  margin-left: 30px;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
 
   li {
     position: relative;
   }
-
-  @media (max-width: $phone-max-width) {
-    margin-left: 20px;
-  }
-}
-
-ol ol {
-  list-style-type: lower-alpha;
 }
 
 .container {
@@ -451,4 +444,12 @@ hr {
 
 .hidden {
   display: none;
+}
+
+.menu {
+  a {
+    text-decoration: none;
+    font-family: Inter;
+    font-size: 1.25rem;
+  }
 }
