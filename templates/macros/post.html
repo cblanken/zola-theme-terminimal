@@ -81,7 +81,7 @@
     {% endif -%}
 
     <div>
-    {{ post_macros::tags(page=page, short=true) }}
+    {{ post_macros::tags(page=page) }}
     </div>
 {% endmacro header %}
 
@@ -98,7 +98,7 @@
                 <span class="post-list-title">{{ page.title }}</span>
             </a>
             <div>
-                {{ post_macros::tags(page=page, short=false) }}
+                {{ post_macros::tags(page=page) }}
             </div>
         </div>
     {% endfor -%}
@@ -106,18 +106,11 @@
 {% endmacro list_posts %}
 
 
-{% macro tags(page, short=false) %}
+{% macro tags(page) %}
     {%- if page.taxonomies and page.taxonomies.tags %}
         <span class="post-tags-inline">
-            {%- if short %}
-                {%- set sep = "," -%}
-            {% else %}
-                tags:&nbsp;
-                {%- set sep = "&nbsp;" -%}
-            {% endif -%}
             {%- for tag in page.taxonomies.tags | sort | unique(case_sensitive=false) %}
                 <a class="post-tag" href="{{ get_taxonomy_url(kind='tags', name=tag) | safe }}">#{{ tag }}</a>
-                {%- if not loop.last %}{{ sep | safe }}{% endif -%}
             {% endfor -%}
         </span>
     {% endif -%}
