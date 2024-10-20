@@ -179,10 +179,15 @@
 
       .toc-header {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         margin-bottom: 1rem;
         border-bottom: 2px solid;
         padding-bottom: 4px;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-family: Inter, Helvetical, Roboto, 'Open-Sans', sans-serif;
+        letter-spacing: 2px;
+        line-height: 2rem;
       }
 
       ol {
