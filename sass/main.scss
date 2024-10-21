@@ -146,8 +146,8 @@ code {
   margin: 0 2px;
   border-radius: 3px;
   font-size: .95rem;
-  padding: 0.1rem 0.3rem;
   background: $code-inline-bg;
+  width: 100%;
 }
 
 pre {
@@ -189,10 +189,6 @@ pre[data-lang] {
 
   code {
     margin-top: 1.5rem;
-
-    span {
-      padding-left: 0.25rem;
-    }
 
     table {
       border: none;
