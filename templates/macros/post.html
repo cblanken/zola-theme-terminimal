@@ -71,14 +71,14 @@
 
 {% macro header(page) %}
     <h1 class="post-title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h1>
-    {%- if not page.no_post_stats %}
+    {% if not page.extra.disable_post_stats %}
     <div class="post-meta-inline">
         {%- if page.date %}
             <span>{{ post_macros::date(page=page) }}</span>&nbsp;&nbsp;⋅&nbsp;&nbsp;
         {% endif -%}
         <span>{{ page.word_count }} words</span>&nbsp;&nbsp;⋅&nbsp;&nbsp;<span>{{ page.reading_time }} min</span>
     </div>
-    {% endif -%}
+    {% endif %}
 
     <div>
     {{ post_macros::tags(page=page) }}
