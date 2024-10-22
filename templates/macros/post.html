@@ -74,9 +74,9 @@
     {%- if not page.no_post_stats %}
     <div class="post-meta-inline">
         {%- if page.date %}
-        <span>{{ post_macros::date(page=page) }}</span>&nbsp;&nbsp;⋅&nbsp;&nbsp;
-        <span>{{ page.word_count }} words</span>&nbsp;&nbsp;⋅&nbsp;&nbsp;<span>{{ page.word_count / 130 | round(precision=0) }} min</span>
+            <span>{{ post_macros::date(page=page) }}</span>&nbsp;&nbsp;⋅&nbsp;&nbsp;
         {% endif -%}
+        <span>{{ page.word_count }} words</span>&nbsp;&nbsp;⋅&nbsp;&nbsp;<span>{{ page.reading_time }} min</span>
     </div>
     {% endif -%}
 
