@@ -27,7 +27,7 @@
         {%- endfor %}
     {%- endif -%}
 
-    {%- if config.extra.umami_id %}
+    {%- if config.extra.umami_id and config.mode != "serve" %}
         <!-- Umami Analytics -->
         <script defer src="https://cloud.umami.is/script.js" data-website-id="{{ config.extra.umami_id }}"></script>
     {% endif -%}
