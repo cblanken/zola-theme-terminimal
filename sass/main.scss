@@ -148,6 +148,7 @@ code {
   font-size: .95rem;
   background: $code-inline-bg;
   width: 100%;
+  white-space: nowrap;
 }
 
 pre {
@@ -167,6 +168,7 @@ pre {
     margin: 0;
     background: none;
     display: inline-block;
+    white-space: pre-wrap;
   }
 }
 
