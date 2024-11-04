@@ -70,7 +70,7 @@
 
 
 {% macro header(page) %}
-    <h1 class="post-title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h1>
+    <h1 id="title" class="post-title"><a href="{{ page.permalink | safe }}#title">{{ page.title }}</a></h1>
     {% if not page.extra.disable_post_stats %}
     <div class="post-meta-inline">
         {%- if page.date %}

@@ -152,18 +152,19 @@
     }
 
     .toc {
-      --toc-width: 15vw;
+      --toc-width: 18vw;
       position: absolute;
       left: calc(-1 * var(--toc-width) - 2rem);
       width: var(--toc-width);
       min-width: 200px;
-      max-height: 90vh;
+      max-height: 96vh;
       overflow-y: auto;
       margin-top: 1rem;
-      padding: 1rem;
+      padding-block: 1rem;
       backdrop-filter: brightness(60%);
       border-top: 4px solid var(--accent);
       border-bottom: 4px solid var(--accent);
+      font-size: 1rem;
 
       @media (max-width: 1400px) {
         position: relative;
@@ -176,8 +177,9 @@
         text-align: center;
         font-size: 1.75rem;
         margin-bottom: 1rem;
-        border-bottom: 2px solid;
+        margin-inline: 0.5rem;
         padding-bottom: 4px;
+        border-bottom: 2px solid;
         text-transform: uppercase;
         font-weight: 800;
         font-family: Inter, Helvetical, Roboto, 'Open-Sans', sans-serif;
@@ -185,20 +187,20 @@
         line-height: 2rem;
       }
 
-      ol {
-        padding-inline-start: 1.5rem;
+      .toc-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: center;
+        margin-block-end: 10px;
       }
 
       ol.toc-items {
-        padding-left: 2rem;
         counter-reset: h1-count 0;
       }
 
       /* hierarchical ToC headings */
       li.toc-item {
-        font-size: 1.15rem;
-        margin: 0.4rem 0;
-        list-style-position: outside;
+        list-style-position: inside;
         counter-increment: h1-count 1;
 
         &::marker {
@@ -209,7 +211,15 @@
           counter-increment: h2-count 1;
 
           &::marker {
-            content: counter(h1-count, decimal) '.' counter(h2-count, decimal) ' ';
+            content: counter(h1-count, decimal) '.' counter(h2-count, decimal) '. ';
+          }
+
+          ol>li {
+            counter-increment: h3-count 1;
+
+            &::marker {
+              content: counter(h1-count, decimal) '.' counter(h2-count, decimal) '.' counter(h3-count, decimal) '. ';
+            }
           }
         }
       }

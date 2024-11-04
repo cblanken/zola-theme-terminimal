@@ -46,18 +46,24 @@ h6 {
 }
 
 h1 {
-  font-size: 1.7rem;
+  font-size: 2rem;
+  margin-block-start: 3rem;
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
+  margin-block-start: 2.5rem;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.55rem;
+  margin-block-start: 1.5rem;
 }
 
-h4,
+h4 {
+  font-size: 1.3rem;
+}
+
 h5,
 h6 {
   font-size: 1rem;
@@ -149,6 +155,8 @@ code {
   background: $code-inline-bg;
   width: 100%;
   white-space: nowrap;
+  padding-inline: 2px;
+  padding-block: 1px;
 }
 
 pre {
@@ -364,8 +372,8 @@ blockquote {
   position: relative;
   border-top: 1px solid var(--accent);
   border-bottom: 1px solid var(--accent);
-  margin: 40px 0;
-  padding: 25px;
+  margin: 25px 0;
+  padding: 20px;
 
   @media (max-width: $phone-max-width) {
     padding-right: 0;
