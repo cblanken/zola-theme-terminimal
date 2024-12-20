@@ -1,20 +1,61 @@
 @import "variables";
 
-.posts {
+.posts,
+.projects {
   display: flex;
   flex-direction: column;
+  gap: 20px;
   width: 100%;
   margin: 0 auto;
 }
 
-.post {
+.project-title-card {
+  display: flex;
+  gap: 2rem;
+  padding-block-end: 1rem;
+
+  img {
+    max-width: 35%;
+    object-fit: contain;
+    object-fit: cover;
+    border-inline-start: 5px solid var(--accent-alpha-70);
+    border-block-start: 5px solid var(--accent-alpha-70);
+    border-inline-end: 5px solid var(--accent-alpha-20);
+    border-block-end: 5px solid var(--accent-alpha-20);
+
+
+    @media (max-width: $tablet-max-width) {
+      display: none;
+    }
+  }
+
+
+}
+
+.project-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project-code-link {
+  width: fit-content;
+
+  a {
+    background: var(--accent-alpha-20);
+    width: fit-content;
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+.post,
+.project {
   font-size: 1.2rem;
   position: relative;
   width: 100%;
   text-align: left;
-  padding: 20px 0;
   font-family: "Atkinson Hyperlegible", Helvetica, Roboto, Verdana, sans-serif;
   line-height: 1.5rem;
+  padding-block-end: 1.5rem;
 
   @media (max-width: $tablet-max-width) {
     max-width: 660px;
