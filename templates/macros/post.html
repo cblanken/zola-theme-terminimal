@@ -108,10 +108,10 @@
 
 {% macro tags(page) %}
     {%- if page.taxonomies and page.taxonomies.tags %}
-        <span class="post-tags-inline">
+        <div class="post-tags">
             {%- for tag in page.taxonomies.tags | sort | unique(case_sensitive=false) %}
                 <a class="post-tag" href="{{ get_taxonomy_url(kind='tags', name=tag) | safe }}">#{{ tag }}</a>
             {% endfor -%}
-        </span>
+        </div>
     {% endif -%}
 {% endmacro tags %}

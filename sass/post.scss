@@ -15,8 +15,8 @@
   padding-block-end: 1rem;
 
   img {
-    max-width: 35%;
-    object-fit: contain;
+    width: 48%;
+    //object-fit: contain;
     object-fit: cover;
     border-inline-start: 5px solid var(--accent-alpha-70);
     border-block-start: 5px solid var(--accent-alpha-70);
@@ -94,8 +94,10 @@
 
   &-tags {
     @extend %tags;
-
-    display: block;
+    column-gap: 0.5rem;
+    row-gap: 0.2rem;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &-tags-inline {
@@ -106,6 +108,16 @@
 
     @media (max-width: $phone-max-width) {
       display: block;
+    }
+  }
+
+  &-tags,
+  &-tags-inline {
+    a {
+      white-space: nowrap;
+      padding: 0.1rem 0.3rem;
+      background: #090a2e;
+      border-radius: 5px;
     }
   }
 
@@ -125,9 +137,20 @@
     }
   }
 
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+    column-gap: 0.5rem;
+  }
+
   .post-tag,
   .tag-list a {
     color: $tag-color;
+    white-space: nowrap;
+    padding: 0.1rem 0.3rem;
+    background: #090a2e;
+    border-radius: 5px;
   }
 
   a {
