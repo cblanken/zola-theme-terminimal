@@ -91,18 +91,6 @@
                             {{ page.description }}
                         </div>
                     </div>
-                    <div class="project-links">
-                        {%- if page.extra.project_src_link %}
-                        <div class="project-code-link">
-                            <a href="{{ page.extra.project_src_link }}">Source code</a>
-                        </div>
-                        {% endif -%}
-                        {%- if page.extra.project_demo_link %}
-                        <div class="project-code-link">
-                            <a href="{{ page.extra.project_demo_link }}">Demo</a>
-                        </div>
-                        {% endif -%}
-                    </div>
                     <div>
                         <a class="read-more button" href="{{ page.permalink | safe }}">
                             <span class="button__text">Read more</span>
