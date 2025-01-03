@@ -416,13 +416,14 @@ table {
 table,
 th,
 td {
-  border: 1px dashed var(--accent);
+  border: 2px solid var(--accent-alpha-70);
   padding: 10px;
 }
 
 th {
   color: var(--accent);
   background: var(--accent-alpha-20);
+  font-size: 1.4rem;
 }
 
 ul,
