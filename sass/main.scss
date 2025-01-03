@@ -264,6 +264,13 @@ pre[data-lang=msg] {
   }
 }
 
+pre[data-lang=html] {
+  &::before {
+    content: "HTML";
+    background: $code-html;
+  }
+}
+
 pre[data-lang=http] {
   &::before {
     content: "HTTP";
