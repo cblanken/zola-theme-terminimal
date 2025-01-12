@@ -13,12 +13,6 @@
     <link rel="stylesheet" href="{{ get_url(path="color/blue.css", trailing_slash=false) | safe }}">
 {% endif -%}
 
-{%- if config.extra.background_color %}
-    {%- if config.extra.accent_color and config.extra.background_color != config.extra.accent_color %}
-        <link rel="stylesheet" href="{{ get_url(path="color/background_" ~ config.extra.background_color ~ ".css", trailing_slash=false) | safe }}">
-    {% endif -%}
-{% endif -%}
-
 {%- if config.extra.use_full_hack_font %}
     <link rel="stylesheet" href="{{ get_url(path="font-hack.css", trailing_slash=false) | safe }}">
 {% else %}
