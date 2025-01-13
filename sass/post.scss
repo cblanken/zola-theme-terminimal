@@ -16,13 +16,13 @@
 
   img {
     width: 48%;
-    //object-fit: contain;
     object-fit: cover;
-    border-inline-start: 5px solid var(--accent-alpha-70);
-    border-block-start: 5px solid var(--accent-alpha-70);
-    border-inline-end: 5px solid var(--accent-alpha-20);
-    border-block-end: 5px solid var(--accent-alpha-20);
 
+    border-inline-start: 5px solid var(--accent-1);
+    border-block-start: 5px solid var(--accent-1);
+    border-inline-end: 5px solid var(--accent-2);
+    border-block-end: 5px solid var(--accent-2);
+    border-radius: 10px;
 
     @media (max-width: $tablet-max-width) {
       display: none;
@@ -42,7 +42,7 @@
   width: fit-content;
 
   a {
-    background: var(--accent-alpha-20);
+    background: var(--accent-2);
     width: fit-content;
     padding: 0.2rem 0.4rem;
   }
@@ -69,7 +69,7 @@
   %meta {
     font-size: 1rem;
     margin-bottom: 10px;
-    color: var(--accent-alpha-70);
+    color: var(--accent-1);
   }
 
   &-meta {
@@ -117,7 +117,8 @@
     a {
       white-space: nowrap;
       padding: 0.1rem 0.3rem;
-      background: #090a2e;
+      color: var(--tag-color);
+      background: var(--tag-bg);
       border-radius: 5px;
     }
   }
@@ -147,10 +148,10 @@
 
   .post-tag,
   .tag-list a {
-    color: $tag-color;
+    color: var(--tag-color);
+    background: var(--tag-bg);
     white-space: nowrap;
     padding: 0.1rem 0.3rem;
-    background: #090a2e;
     border-radius: 5px;
   }
 
@@ -160,7 +161,8 @@
 
     &:hover {
       background: var(--accent);
-      color: var(--background);
+      //color: var(--background);
+      color: var(--color-hover);
 
       .post-date {
         color: var(--background);
@@ -226,7 +228,7 @@
       overflow-y: auto;
       margin-top: 1rem;
       padding-block: 1rem;
-      backdrop-filter: brightness(60%);
+      background: var(--toc-bg);
       border-top: 4px solid var(--accent);
       border-bottom: 4px solid var(--accent);
       font-size: 1rem;
@@ -318,11 +320,11 @@
 }
 
 .post-date {
-  color: var(--accent-alpha-70);
+  color: var(--accent-1);
   font-family: Inter, Verdana, Roboto, 'Open Sans', sans-serif;
 }
 
 .post-content::selection,
 .post-content *::selection {
-  background: var(--accent-alpha-70);
+  background: var(--accent-1);
 }

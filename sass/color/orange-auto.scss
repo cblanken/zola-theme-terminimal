@@ -1,29 +1,24 @@
 :root {
-  @media (prefers-color-scheme: dark) {
-    --accent: rgb(255,168,106);
-    --accent-alpha-70: rgba(255,168,106,.7);
-    --accent-alpha-20: rgba(255,168,106,.2);
-  
-    --background: #101010;
-    --color: #f0f0f0;
-    --border-color: rgba(255,240,224,.125);
-    
-    div.logo {
-      color: black;
-    }
-  
-  }
-  @media (prefers-color-scheme: light) {
-    --accent: rgb(240,128,48);
-    --accent-alpha-70: rgba(240,128,48,.7);
-    --accent-alpha-20: rgba(240,128,48,.2);
-  
-    --background: white;
-    --color: #201030;
-    --border-color: rgba(0,0,16,.125);
+  color-scheme: light dark;
 
-    div.logo {
-      color: white;
-    }
-  }
+  /* General */
+  --background: light-dark(#fffce3, #101010);
+  --color: light-dark(#4c4d50, #f0f0f0);
+  --border-color: rgba(255, 240, 224, .125);
+
+  --accent: light-dark(rgba(242, 134, 68, 1), rgba(255, 168, 106, 1));
+  --accent-1: light-dark(rgba(242, 134, 68, .8), rgba(255, 168, 106, .7));
+  --accent-2: light-dark(rgba(242, 134, 68, .2), rgba(255, 168, 106, .2));
+
+  --color-hover: light-dark(white, black);
+
+  /* Tags */
+  --tag-color: light-dark(#222, #85d3ff);
+  --tag-bg: light-dark(#FAC19E, black);
+
+  /* Table of Contents */
+  --toc-bg: light-dark(transparent, transparent);
+
+  /* Code blocks */
+  --code-inline-bg: light-dark(#f3f3f3, #555555);
 }
