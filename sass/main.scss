@@ -472,3 +472,15 @@ hr {
     font-size: 1.25rem;
   }
 }
+
+.theme-auto {
+  color-scheme: light dark;
+}
+
+.theme-light {
+  color-scheme: light;
+}
+
+.theme-dark {
+  color-scheme: dark;
+}
