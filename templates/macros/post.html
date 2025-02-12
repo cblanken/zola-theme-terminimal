@@ -80,6 +80,7 @@
             <a href="{{ page.extra.project_demo_link }}">Demo</a>
         </div>
         {% endif -%}
+        <div class="langs-block">{%- for lang_page in page.translations %}<a class="lang-item" href="{{lang_page.permalink}}">{{ lang_page.lang | upper }}</a>{% endfor -%}</div>
     </div>
     {% if not page.extra.disable_post_stats %}
     <div class="post-meta-inline">
@@ -102,10 +103,12 @@
         {%- if page.draft %}
             {% continue %}
         {% endif -%}
-        <div class="post-date">{{ page.date }}</div>
+        <div class="post-date">{{ page.date }}
+        <div class="langs-block">{%- for lang_page in page.translations %}<a class="lang-item" href="{{lang_page.permalink}}">{{ lang_page.lang | upper }}</a>{% endfor -%}</div>
+        </div>
         <div class="post-title-tags">
             <a href="{{ page.permalink | safe }}">
-                <span class="post-list-title">{{ page.title }}</span>
+                <span class="post-list-title">{{ page.title }} </span>
             </a>
             <div>
                 {{ post_macros::tags(page=page) }}

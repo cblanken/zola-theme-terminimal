@@ -328,3 +328,21 @@
 .post-content *::selection {
   background: var(--accent-1);
 }
+
+.langs-block {
+  display: flex;
+  gap: 0.2rem;
+  font-weight: bold;
+}
+
+.lang-item {
+  color: var(--lang-color) !important;
+  font-size: 0.8rem;
+  background: var(--lang-bg);
+  margin: 0;
+  padding: 0 0.25rem
+}
+
+.lang-item:hover {
+  background: var(--accent);
+}
