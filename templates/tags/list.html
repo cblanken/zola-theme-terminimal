@@ -10,8 +10,8 @@
 
         <div class="tag-list">
             {% for term in terms %}
-                <a href="{{ term.permalink | safe }}">
-                    {{ term.name }} ({{ term.pages | length }})
+                <a class="post-tag" href="{{ term.permalink | safe }}">
+                    {{ term.name }}({{ term.pages | length }})
                 </a>
             {% endfor %}
         </div>

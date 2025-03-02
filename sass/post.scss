@@ -80,6 +80,7 @@
     @extend %meta;
 
     display: inline;
+    color: var(--color-soft) !important;
   }
 
   &-title {
@@ -91,6 +92,8 @@
   %tags {
     font-size: 1rem;
     opacity: .9;
+    margin-block-start: 0.5rem;
+    margin-block-end: 0.25rem;
   }
 
   &-tags {
@@ -144,15 +147,22 @@
     flex-wrap: wrap;
     row-gap: 0.25rem;
     column-gap: 0.5rem;
+    text-align: justify;
   }
 
-  .post-tag,
-  .tag-list a {
+  .post-tag {
     color: var(--tag-color);
     background: var(--tag-bg);
     white-space: nowrap;
-    padding: 0.1rem 0.3rem;
-    border-radius: 5px;
+    padding: 0 0.5rem;
+    border-radius: 1000px;
+    font-family: Hack, 'FiraMono', 'FreeMono', 'Noto Sans Mono', monospace;
+    line-height: 2rem;
+  }
+
+  .post-tag:hover {
+    background: var(--tag-hover-bg);
+    color: var(--tag-hover-color);
   }
 
   a {
@@ -161,12 +171,7 @@
 
     &:hover {
       background: var(--accent);
-      //color: var(--background);
       color: var(--color-hover);
-
-      .post-date {
-        color: var(--background);
-      }
 
       code {
         background: var(--accent);
@@ -314,14 +319,22 @@
 .post-list {
   display: grid;
   grid-template-columns: 1fr 6fr;
-  grid-gap: 20px;
+  grid-row-gap: 16px;
   font-family: "Inter";
   text-wrap: nowrap;
+
+  &-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Inter, "Segoe UI", "Noto Sans", Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
+  }
 }
 
 .post-date {
-  color: var(--accent-1);
+  color: var(--color-soft);
   font-family: Inter, Verdana, Roboto, 'Open Sans', sans-serif;
+  font-style: italic;
+  font-size: 1rem;
 }
 
 .post-content::selection,
