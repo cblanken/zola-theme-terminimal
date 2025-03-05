@@ -2,31 +2,30 @@
   color-scheme: light dark;
 
   /* General */
-  --background: light-dark(#fffce3, #101010);
-  --background: light-dark(#f5eed4, #1c1c1c);
+  --background: light-dark(#fffbe6, #1c1c1c);
   --color: light-dark(#4c4d50, #f0f0f0);
   --color-soft: light-dark(gray, #989898);
   --border-color: rgba(255, 240, 224, .125);
 
-  --accent: light-dark(rgba(242, 134, 68, 1), rgba(255, 168, 106, 1));
-  --accent-1: light-dark(rgba(242, 134, 68, .8), rgba(255, 168, 106, .8));
-  --accent-2: light-dark(rgba(242, 134, 68, .2), rgba(255, 168, 106, .2));
+  --accent: light-dark(rgb(111, 129, 199, 1), rgba(255, 168, 106, 1));
+  --accent-1: light-dark(rgb(111, 129, 199, .8), rgba(255, 168, 106, .8));
+  --accent-2: light-dark(rgb(111, 129, 199, .2), rgba(255, 168, 106, .2));
 
   --color-hover: light-dark(white, black);
 
   /* Tags */
   --tag-color: light-dark(#333, #7f96f8);
-  --tag-hover-color: light-dark(white, white);
+  --tag-hover-color: light-dark(white, var(--color));
   --tag-bg: light-dark(#bdc4e2, black);
-  --tag-hover-bg: light-dark(black, #546ac8);
+  --tag-hover-bg: light-dark(#222, #546ac8);
+
+  /* Links */
+  --link-hover-color: gray;
+  --link-hover-bg: black;
 
   /* Table of Contents */
   --toc-bg: light-dark(transparent, transparent);
 
   /* Code blocks */
   --code-inline-bg: light-dark(#f3f3f3, #555555);
-
-  /* Language blocks/tags */
-  --lang-color: light-dark(#444, #111);
-  --lang-bg: light-dark(#e5d7cb, #aa8686);
 }

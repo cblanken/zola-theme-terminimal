@@ -106,18 +106,14 @@
         {%- if page.draft %}
             {% continue %}
         {% endif -%}
-        <div class="post-date">{{ page.date | date(format="%Y-%m-%d") }}
-        {% if page.translations | length > 1 %}
-        <div class="langs-block">{%- for lang_page in page.translations %}<a class="lang-item" href="{{lang_page.permalink}}">{{ lang_page.lang | upper }}</a>{% endfor -%}</div>
-        {% endif %}
+        <div>
+            <div class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</div>
+            {% if page.translations | length > 1 %}
+            <div class="langs-block">{%- for lang_page in page.translations %}<a class="lang-item" href="{{lang_page.permalink}}">{{ lang_page.lang | upper }}</a>{% endfor -%}</div>
+            {% endif %}
         </div>
         <div class="post-title-tags">
-            <a href="{{ page.permalink | safe }}">
-                <span class="post-list-title">{{ page.title }} </span>
-            </a>
-            <div>
-                {{ post_macros::tags(page=page) }}
-            </div>
+            <a class="post-list-title" href="{{ page.permalink | safe }}">{{ page.title }} </a>
         </div>
     {% endfor -%}
     </div>
