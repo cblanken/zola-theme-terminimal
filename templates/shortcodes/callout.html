@@ -1,0 +1,150 @@
+<svg 
+  version="1.1" 
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  style="display: none;">
+    <style>
+        .info-text {
+            font-size: 60px;
+            font-weight: 600;
+            font-family: 'Atkinson Hyperlegible', 'Tahoma', 'Arial';
+        }
+    </style>
+    <symbol id="info" viewBox="0 0 100 100">
+        <circle
+           id="info-circle"
+           stroke="currentColor"
+           stroke-width="10"
+           cx="50"
+           cy="50"
+           r="45" />
+        <text class="info-text" x="50" y="50" dy=".26rem" text-anchor="middle" dominant-baseline="middle" fill="currentColor">i</text>
+    </symbol>
+    <symbol id="warn" viewBox="0 0 100 100">
+        <circle
+          id="warning-circle"
+          stroke="currentColor"
+          stroke-width="10"
+          cx="50"
+          cy="50"
+          r="45" />
+        <text class="info-text" x="50" y="50" dy=".26rem" text-anchor="middle" dominant-baseline="middle" fill="currentColor">!</text>
+    </symbol>
+    <symbol id="tip" viewBox="0 0 285 285">
+        <polygon
+          id="tip-star"
+          stroke="#efefef"
+          stroke-width="20"
+          points="150,15 258,77 258,202 150,265 42,202 42,77"
+          fill="currentColor"
+        />
+    </symbol>
+</svg>
+
+{% if type == "caution" %}
+<div class="callout caution">
+  <div class="callout-head">
+    <svg class="icon"><use xlink:href="#info"></use></svg>
+    <div>Caution</div>
+  </div>
+  <div class="callout-text">
+    {{ body | markdown | safe }}
+  </div>
+</div>
+{% elif type == "warning" %}
+<div class="callout warning">
+  <div class="callout-head">
+    <svg class="icon"><use xlink:href="#warn"></use></svg>
+    <div>Warning</div>
+  </div>
+  <div class="callout-text">
+    {{ body | markdown | safe }}
+  </div>
+</div>
+{% elif type == "important" %}
+<div class="callout important">
+  <div class="callout-head">
+    <svg class="icon"><use xlink:href="#info"></use></svg>
+    <div>Important</div>
+  </div>
+  <div class="callout-text">
+    {{ body | markdown | safe }}
+  </div>
+</div>
+{% elif type == "tip" %}
+<div class="callout tip">
+  <div class="callout-head">
+    <svg class="icon"><use xlink:href="#tip"></use></svg>
+    <div>Tip</div>
+  </div>
+  <div class="callout-text">
+    {{ body | markdown | safe }}
+  </div>
+</div>
+{% else %}
+<div class="callout note">
+  <div class="callout-head">
+    <svg class="icon"><use xlink:href="#info"></use></svg>
+    <div>Note</div>
+  </div>
+  <div class="callout-text">
+    {{ body | markdown | safe }}
+  </div>
+</div>
+{% endif %}
+
+<style>
+.callout {
+  backdrop-filter: brightness(135%);
+  border-left: 4px solid;
+  padding: 10px;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 1rem 0;
+  font-size: 1.25rem;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.caution {
+  color: #f34e4e;
+}
+
+.warning {
+  color: orange;
+}
+
+.important {
+  color: rgb(177, 154, 255);
+}
+
+.tip {
+  color: rgb(71, 173, 71);
+}
+
+.note {
+  color: rgb(172, 223, 255);
+}
+
+.callout-head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  fill: transparent;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+.callout-text {
+  color: var(--color);
+}
+
+.callout-text > p:last-of-type {
+  margin-bottom: 0;
+}
+
+</style>
