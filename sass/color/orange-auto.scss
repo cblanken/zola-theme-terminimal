@@ -28,4 +28,15 @@
 
   /* Code blocks */
   --code-inline-bg: light-dark(#f3f3f3, #555555);
+
+  /* Callout blocks */
+  --callout-bg: light-dark(rgb(223 222 203), #2f2f2f);
+  --callout-color: light-dark(var(--color), var(--color));
+
+  --color-caution: light-dark(#f34e4e, #f34e4e);
+  --color-warning: light-dark(#f01e1e, orange);
+  --color-important: light-dark(rgb(177, 154, 255), rgb(177, 154, 255));
+  --color-tip: light-dark(rgb(71, 173, 71), rgb(71, 173, 71));
+  --color-note: light-dark(#212227, rgb(172, 223, 255));
+
 }

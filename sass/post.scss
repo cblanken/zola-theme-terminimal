@@ -357,3 +357,58 @@
   background: var(--accent);
   color: var(--color-hover);
 }
+
+.callout {
+  background: var(--callout-bg);
+  color: var(--callout-color);
+  border-left: 8px solid;
+  padding: 10px;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 1rem 0;
+  font-size: 1.25rem;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.caution {
+  color: var(--color-caution);
+}
+
+.warning {
+  color: var(--color-warning);
+}
+
+.important {
+  color: var(--color-important);
+}
+
+.tip {
+  color: var(--color-tip);
+
+}
+
+.note {
+  color: var(--color-note);
+}
+
+.callout-head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  fill: transparent;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+.callout-text {
+  color: var(--color);
+}
+
+.callout-text>p:last-of-type {
+  margin-bottom: 0;
+}
