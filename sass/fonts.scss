@@ -78,6 +78,12 @@
   src: url('/fonts/AtkinsonHyperlegible/AtkinsonHyperlegible-Regular.otf') format('opentype');
 }
 
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url('/fonts/AtkinsonHyperlegible/AtkinsonHyperlegible-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+
 /*!
  *  Inter typeface https://rsms.me/inter
  *  License: https://rsms.me/inter/#free
@@ -85,4 +91,63 @@
 @font-face {
   font-family: "Inter";
   src: url('/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url('/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-style: italic;
+}
+
+/*!
+ *  Poppins 
+ *  License: https://openfontlicense.org/open-font-license-official-text/
+ */
+@font-face {
+  font-family: "Poppins";
+  src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url('/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url('/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url('/fonts/Poppins/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url('/fonts/Poppins/Poppins-Italic.ttf') format('truetype');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url('/fonts/Poppins/Poppins-BoldItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url('/fonts/Poppins/Poppins-ExtraBoldItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 800;
 }
