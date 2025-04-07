@@ -120,15 +120,13 @@
             {% else %}
                 <div class="copyright">
                     {%- if config.extra.author %}
-                        <span>© {{ date_macros::now_year() }} {{ config.extra.author }}</span>
+                        <div>© {{ date_macros::now_year() }} {{ config.extra.author }}</div>
                     {% else %}
-                        <span>© {{ date_macros::now_year() }} Powered by <a href="https://www.getzola.org/">Zola</a></span>
+                        <div>© {{ date_macros::now_year() }} Powered by <a href="https://www.getzola.org/">Zola</a></div>
                     {% endif -%}
-
-                    <span class="copyright-theme">
-                        <span class="copyright-theme-sep">:: </span>
-                        Theme: <a href="https://github.com/cblanken/zola-theme-terminimal/">Terminimal</a>
-                    </span>
+                    <div class="copyright-theme">
+                        <div>Theme: <a href="https://github.com/cblanken/zola-theme-terminimal/">Terminimal</a></div>
+                    </div>
                 </div>
             {% endif -%}
         </div>
