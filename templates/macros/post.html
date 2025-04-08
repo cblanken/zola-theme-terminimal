@@ -29,7 +29,7 @@
 {% macro date(page) %}
     <span class="post-date">
         {%- if page.date %}
-            {{ page.date | date(format="%B %d, %Y") }}
+            {{ page.date | date(format="%b %d, %Y") }}
         {% endif -%}
     </span>
 {% endmacro post_date %}
@@ -69,6 +69,7 @@
 
 {% macro header(page) %}
     <h1 id="title" class="post-title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h1>
+    {% if page.extra.project_src_link or page.extra.project_demo_link or page.translations | length > 1 %}
     <div class="project-links">
         {%- if page.extra.project_src_link %}
         <div class="project-code-link">
@@ -85,12 +86,32 @@
         <div class="langs-block">{%- for lang_page in page.translations %}<a class="lang-item" href="{{lang_page.permalink}}">{{ lang_page.lang | upper }}</a>{% endfor -%}</div>
         {% endif %}
     </div>
+    {% endif %}
+
     {% if not page.extra.disable_post_stats %}
     <div class="post-meta-inline">
         {%- if page.date %}
-            <span>{{ post_macros::date(page=page) }}</span>&nbsp;&nbsp;⋅&nbsp;&nbsp;
+        <div>
+            <h4>Published</h4>
+            <div>{{ post_macros::date(page=page) }}</div>
+        </div>
         {% endif -%}
-        <span>{{ page.word_count }} words</span>&nbsp;&nbsp;⋅&nbsp;&nbsp;<span>{{ page.reading_time }} min</span>
+
+        {% if page.updated %}
+        <div>
+            <h4>Last edited</h4>
+            <div>{{ page.updated | date(format="%b %d, %Y") }}</div>
+        </div>
+        {% endif %}
+
+        <div>
+            <h4>Reading time</h4>
+            {% if page.reading_time == 1 %}
+            <div>{{ page.reading_time }} minute</div>
+            {% else %}
+            <div>{{ page.reading_time }} minutes</div>
+            {% endif %}
+        </div>
     </div>
     {% endif %}
 

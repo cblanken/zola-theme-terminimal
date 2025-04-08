@@ -77,8 +77,25 @@
   &-meta-inline {
     @extend %meta;
 
-    display: inline;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 1.6rem;
     color: var(--color-soft) !important;
+  }
+
+  &-meta-inline {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 0.4rem;
+      color: var(--color);
+    }
   }
 
   &-title {
@@ -338,8 +355,6 @@
 .post-date {
   color: var(--color-soft);
   font-family: Inter, Verdana, Roboto, 'Open Sans', sans-serif;
-  font-style: italic;
-  font-size: 1rem;
 }
 
 .post-content::selection,
