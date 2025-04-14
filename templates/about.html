@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="post">
+        {% set section = get_section(path="about/_index.md", lang=res.settings_locale) %}
+        <h1>{{section.title}}</h1>
+        <h3>{{section.description}}</h3>
+        {{section.content | safe}}
+    </div>
+{% endblock content %}

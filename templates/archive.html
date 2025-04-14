@@ -6,7 +6,7 @@
 
 {% block content %}
     <div class="post">
-        {% set section = get_section(path="_index.md") %}
+        {% set section = get_section(path="_index.md", lang=res.settings_locale) %}
             {% for sub_dir in page.extra.archive_dirs %}
               {% set sub_section = get_section(path=sub_dir ~ "/_index.md") %}
               <h2 id={{sub_section.title}}><a class="zola-anchor" href="#{{sub_section.title}}">{{ sub_section.title }}</a></h2>
