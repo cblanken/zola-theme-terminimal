@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
     <meta name="robots" content="noodp"/>
 
-    <link rel="stylesheet" href="{{ get_url(path="style.css", trailing_slash=false) | safe }}">
+    <link rel="stylesheet" href="{{ get_url(path="style.css", trailing_slash=false, cachebust=true) | safe }}">
 
 {%- if config.extra.accent_color %}
-    <link rel="stylesheet" href="{{ get_url(path="color/" ~ config.extra.accent_color ~ ".css", trailing_slash=false) | safe }}">
+    <link rel="stylesheet" href="{{ get_url(path="color/" ~ config.extra.accent_color ~ ".css", trailing_slash=false, cachebust=true) | safe }}">
 {% else %}
-    <link rel="stylesheet" href="{{ get_url(path="color/blue.css", trailing_slash=false) | safe }}">
+    <link rel="stylesheet" href="{{ get_url(path="color/orange-auto.css", trailing_slash=false, cachebust=true) | safe }}">
 {% endif -%}
 
 {% endmacro head %}
