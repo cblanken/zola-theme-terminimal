@@ -52,7 +52,7 @@
   position: relative;
   width: 100%;
   text-align: left;
-  font-family: Poppins, "Atkinson Hyperlegible", Helvetica, Roboto, Verdana, sans-serif;
+  font-family: $font-body;
   line-height: 1.7rem;
   padding-block-end: 1.5rem;
 
@@ -171,7 +171,7 @@
     white-space: nowrap;
     padding: 0 0.5rem;
     border-radius: 1000px;
-    font-family: Hack, 'FiraMono', 'FreeMono', 'Noto Sans Mono', monospace;
+    font-family: $font-mono;
     line-height: 2rem;
   }
 
@@ -230,7 +230,7 @@
   }
 
   li::marker {
-    font-family: Hack, 'FiraMono', 'FreeMono', 'Noto Sans Mono', monospace;
+    font-family: $font-mono;
   }
 
   .toc-container {
@@ -274,7 +274,7 @@
         border-bottom: 2px solid;
         text-transform: uppercase;
         font-weight: 800;
-        font-family: Inter, Helvetica, Roboto, 'Open-Sans', sans-serif;
+        font-family: $font-heading;
         letter-spacing: 2px;
         line-height: 2rem;
       }
@@ -350,11 +350,15 @@
   &-title {
     font-size: 1.25rem;
   }
+
+  .post-date {
+    font-family: $font-mono;
+  }
 }
 
 .post-date {
   color: var(--color-soft);
-  font-family: Inter, Verdana, Roboto, 'Open Sans', sans-serif;
+  font-family: $font-body;
 }
 
 .post-content::selection,

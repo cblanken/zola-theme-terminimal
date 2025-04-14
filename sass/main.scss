@@ -14,7 +14,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: Poppins, Inter, 'Segoe UI', 'Noto Sans', Roboto, Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-body;
   font-size: 1rem;
   line-height: 1.8;
   background-color: var(--sidebar-background);
@@ -146,7 +146,7 @@ figure {
 /* Custom code block styles  */
 /* ------------------------- */
 code {
-  font-family: Hack, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
+  font-family: $font-mono;
   font-feature-settings: normal;
   margin: 0 2px;
   border-radius: 3px;
@@ -159,7 +159,7 @@ code {
 }
 
 pre {
-  font-family: Hack, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
+  font-family: $font-mono;
   font-size: .95rem;
   overflow: auto;
   border-radius: 3px;
@@ -193,7 +193,7 @@ pre[data-lang] {
     background: $code-border;
     color: $code-dark;
     font-weight: bold;
-    font-family: "Hack" monospace;
+    font-family: $font-mono;
   }
 
   code {
