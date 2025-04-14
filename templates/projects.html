@@ -8,6 +8,11 @@
 <html lang="{%- if config.default_language -%}{{ config.default_language }}{%- else -%}en{%- endif -%}">
 
 <head>
+    {# Initialize localization #}
+    {% set res = load_data(path=config.extra.path_language_resources ~ config.default_language ~ '.toml') %}
+    {% set locale = res.settings_locale | default(value="en") %}
+    {% set date_locale = res.settings_date_locale | default(value="en_US") %}
+    {% set date_format = res.settings_date_format | default(value="%B %d, %Y") %}
     <title>{%- block title %}{{ config.title }}{% endblock title -%}</title>
     {{ head_macros::head(config=config) }}
 
@@ -67,7 +72,7 @@
         </div>
 
         {% block header_menu %}
-        {{ menu_macros::menu(config=config, current_path=current_path) }}
+        {{ menu_macros::menu(config=config, current_path=current_path, res=res) }}
         {% endblock header_menu %}
     </header>
     {% endblock header %}

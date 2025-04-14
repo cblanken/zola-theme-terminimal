@@ -1,11 +1,11 @@
-{% macro content(page, summary, show_only_description) %}
+{% macro content(page, summary, show_only_description, res) %}
     {%- if show_only_description %}
         <div class="post-content">
             {{ page.description | safe }}
         </div>
         <div>
             <a class="read-more button" href="{{ page.permalink | safe }}">
-                <span class="button__text">Read more</span>
+            <span class="button__text">{{res.read_more}}</span>
             </a>
         </div>
     {% elif summary and page.summary %}
@@ -14,7 +14,7 @@
         </div>
         <div>
             <a class="read-more button" href="{{ page.permalink | safe }}">
-                <span class="button__text">Read more</span>
+            <span class="button__text">{{res.read_more}}</span>
             </a>
         </div>
     {% else %}
