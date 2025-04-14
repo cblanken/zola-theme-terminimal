@@ -6,8 +6,6 @@
 
 {% block content %}
     <div class="post">
-        <h1 class="post-title">{{ page.title }}</h1>
-
         {% set section = get_section(path="_index.md") %}
             {% for sub_dir in page.extra.archive_dirs %}
               {% set sub_section = get_section(path=sub_dir ~ "/_index.md") %}
