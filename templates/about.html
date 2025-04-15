@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="post">
-        {% set section = get_section(path="about/_index.md", lang=res.settings_locale) %}
+        {% set section = get_section(path="about/_index.md", lang=lang) %}
         <h1>{{section.title}}</h1>
         <h3>{{section.description}}</h3>
         {{section.content | safe}}

@@ -5,7 +5,7 @@
         </div>
         <div>
             <a class="read-more button" href="{{ page.permalink | safe }}">
-            <span class="button__text">{{res.read_more}}</span>
+            <span class="button__text">{{res[lang].read_more}}</span>
             </a>
         </div>
     {% elif summary and page.summary %}
@@ -14,7 +14,7 @@
         </div>
         <div>
             <a class="read-more button" href="{{ page.permalink | safe }}">
-            <span class="button__text">{{res.read_more}}</span>
+            <span class="button__text">{{res[lang].read_more}}</span>
             </a>
         </div>
     {% else %}

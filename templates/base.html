@@ -7,12 +7,17 @@
 <!DOCTYPE html>
 <html lang="{%- if config.default_language -%}{{ config.default_language }}{%- else -%}en{%- endif -%}">
 
+{% set_global all_langs = [lang,] %}
+{% for l, _data in config.languages %}
+    {% set_global all_langs = all_langs | concat(with=l) %}
+{% endfor %}
+
 <head>
-    {# Initialize localization #}
-    {% set res = load_data(path=config.extra.path_language_resources ~ lang ~ '.toml') %}
-    {% set locale = res.settings_locale | default(value="en") %}
-    {% set date_locale = res.settings_date_locale | default(value="en_US") %}
-    {% set date_format = res.settings_date_format | default(value="%B %d, %Y") %}
+    {# Initialize localization data #}
+    {% set_global res = load_data(path=config.extra.path_language_resources ~ 'all.toml') %}
+    {% set locale = res[lang].settings_locale | default(value="en") %}
+    {% set date_locale = res[lang].settings_date_locale | default(value="en_US") %}
+    {% set date_format = res[lang].settings_date_format | default(value="%B %d, %Y") %}
 
     <title>{%- block title %}{{ config.title }}{% endblock title -%}</title>
     {{ head_macros::head(config=config) }}

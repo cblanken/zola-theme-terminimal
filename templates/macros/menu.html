@@ -1,10 +1,10 @@
 {% macro menu(config, current_path, res) %}
     {% set current_item = false %}
-    {% if res.nav.items %}
-        {% set menu_items = res.nav.items %}
+    {% if res[lang].nav.items %}
+        {% set menu_items = res[lang].nav.items %}
             {% for item in menu_items %}
                 {% if not item.external %}
-                    {% if res.settings_locale == config.default_language %}
+                    {% if res[lang].settings_locale == config.default_language %}
                         {% set is_current = item.url == current_path | split(pat="/") | nth(n=1) | trim %}
                     {% else %}
                         {% set is_current = item.url == current_path | split(pat="/") | nth(n=2) %}
@@ -31,11 +31,11 @@
 {% endmacro menu %}
 
 {% macro menu_for(config, current_item, res) %}
-    {% if res.nav.items %}
-        {% set menu_items = res.nav.items %}
+    {% if res[lang].nav.items %}
+        {% set menu_items = res[lang].nav.items %}
         <nav class="menu">
             <ul class="menu__inner">
-            {% for item in res.nav.items %}
+            {% for item in res[lang].nav.items %}
                 <li {% if current_item and current_item == item %} class="active" {% endif %}>
                     {% if item.external %}
                         {% if item.newtab %}
@@ -44,7 +44,7 @@
                             <a class="external-link" href="{{ item.url | safe }}">{{ item.name | safe }}</a>
                         {% endif %}
                     {% else %}
-                        {% if config.default_language == res.settings_locale %}
+                        {% if config.default_language == res[lang].settings_locale %}
                             {% set url = get_url(path=item.url) %}
                         {% else %}
                             {% set url = get_url(path=item.url, lang=lang) %}
