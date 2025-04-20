@@ -7,10 +7,14 @@
 {% block content %}
     <div class="post">
         {% set section = get_section(path="_index.md", lang=lang) %}
+
             {% for sub_dir in section.extra.archive_dirs %}
-              {% set sub_section = get_section(path=sub_dir ~ "/_index.md") %}
+              {% set sub_section = get_section(path=sub_dir ~ "/_index.md", lang=lang) %}
               <h2 id={{sub_section.title}}><a class="zola-anchor" href="#{{sub_section.title}}">{{ sub_section.title }}</a></h2>
-              {{ post_macros::list_posts(pages=sub_section.pages) }}
+              {% if not sub_section.pages %}
+                {{res[lang].errors.empty_section}}
+              {% endif %}
+              {{ post_macros::list_posts(pages=sub_section.pages, res=res) }}
             {% endfor %}
     </div>
 {% endblock content %}

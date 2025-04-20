@@ -26,21 +26,21 @@
 {% endmacro content %}
 
 
-{% macro date(page) %}
+{% macro date(page, res) %}
     <span class="post-date">
         {%- if page.date %}
-            {{ page.date | date(format="%b %d, %Y") }}
+            {{ page.date | date(format=res[lang].settings_date_format) }}
         {% endif -%}
     </span>
 {% endmacro post_date %}
 
 
-{% macro earlier_later(page) %}
+{% macro earlier_later(page, res) %}
     {%- if config.extra.enable_post_view_navigation %}
         {%- if page.lower or page.higher %}
             <div class="pagination">
                 <div class="pagination__title">
-                    <span class="pagination__title-h">{{ config.extra.post_view_navigation_prompt }}</span>
+                    <span class="pagination__title-h">{{ res[lang].read_more }}</span>
                     <hr />
                 </div>
                 <div class="pagination__buttons">
@@ -67,18 +67,18 @@
 {% endmacro earlier_later %}
 
 
-{% macro header(page) %}
+{% macro header(page, res) %}
     <h1 id="title" class="post-title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h1>
     {% if page.extra.project_src_link or page.extra.project_demo_link or page.translations | length > 1 %}
     <div class="project-links">
         {%- if page.extra.project_src_link %}
         <div class="project-code-link">
-            <a href="{{ page.extra.project_src_link }}">Source code</a>
+            <a href="{{ page.extra.project_src_link }}">{{res[lang].source_code}}</a>
         </div>
         {% endif -%}
         {%- if page.extra.project_demo_link %}
         <div class="project-code-link">
-            <a href="{{ page.extra.project_demo_link }}">Demo</a>
+            <a href="{{ page.extra.project_demo_link }}">{{res[lang].demo}}</a>
         </div>
         {% endif -%}
 
@@ -92,20 +92,20 @@
     <div class="post-meta-inline">
         {%- if page.date %}
         <div>
-            <h4>Published</h4>
-            <div>{{ post_macros::date(page=page) }}</div>
+            <h4>{{res[lang].published}}</h4>
+            <div>{{ post_macros::date(page=page, res=res) }}</div>
         </div>
         {% endif -%}
 
         {% if page.updated %}
         <div>
-            <h4>Last edited</h4>
-            <div>{{ page.updated | date(format="%b %d, %Y") }}</div>
+            <h4>{{res[lang].last_edited}}</h4>
+            <div>{{ page.updated | date(format=res[lang].settings_date_format) }}</div>
         </div>
         {% endif %}
 
         <div>
-            <h4>Reading time</h4>
+            <h4>{{res[lang].reading_time}}</h4>
             {% if page.reading_time == 1 %}
             <div>{{ page.reading_time }} minute</div>
             {% else %}
@@ -121,14 +121,14 @@
 {% endmacro header %}
 
 
-{% macro list_posts(pages) %}
+{% macro list_posts(pages, res) %}
     <div class="post-list">
     {%- for page in pages %}
         {%- if page.draft %}
             {% continue %}
         {% endif -%}
         <div>
-            <div class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</div>
+        <div class="post-date">{{ page.date | date(format=res[lang].settings_date_format) }}</div>
             {% if page.translations | length > 1 %}
             <div class="langs-block">{%- for lang_page in page.translations %}<a class="lang-item" href="{{lang_page.permalink}}">{{ lang_page.lang | upper }}</a>{% endfor -%}</div>
             {% endif %}

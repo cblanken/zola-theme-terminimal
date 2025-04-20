@@ -1,26 +1,30 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <div class="post">
-        {% set section = get_section(path="feeds/_index.md", lang=lang) %}
-        <h1>{{section.title}}</h1>
-        {% for lang in all_langs %}
-            <h2>{{ lang | upper }} </h2>
-            {% if lang == config.default_language %}
-                <a href="{{config.base_url ~ "/rss.xml"}}">Combined feed</a>
-                <ul>
-                    {% for i in [1,2,3,] %}
-                        <li><a href="{{config.base_url ~ "/" ~ res[lang].nav.items[i].url}}/rss.xml">{{res[lang].nav.items[i].name}}</a></li>
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <a href="{{config.base_url ~ "/" ~ lang ~ "/rss.xml"}}">Combined feed</a>
-                <ul>
-                    {% for i in [1,2,3,] %}
-                        <li><a href="{{config.base_url ~ "/" ~ lang ~ "/" ~ res[lang].nav.items[i].url}}/rss.xml">{{res[lang].nav.items[i].name}}</a></li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endfor %}
+<div class="post">
+    {% set section = get_section(path="feeds/_index.md", lang=lang) %}
+    <h1>{{section.title}}</h1>
+    <div class="grid-auto">
+    {% for lang in all_langs %}
+        <div>
+        <h2>{{ lang | upper }} </h2>
+        {% if lang == config.default_language %}
+            <a href="{{config.base_url ~ "/rss.xml"}}">Combined feed</a>
+            <ul>
+                {% for i in [1,2,3,] %}
+                    <li><a href="{{config.base_url ~ "/" ~ res[lang].nav.items[i].url}}/rss.xml">{{res[lang].nav.items[i].name}}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+<a href="{{config.base_url ~ "/" ~ lang ~ "/rss.xml"}}">{{res[lang].feeds.combined_title}}</a>
+            <ul>
+                {% for i in [1,2,3,] %}
+                    <li><a href="{{config.base_url ~ "/" ~ lang ~ "/" ~ res[lang].nav.items[i].url}}/rss.xml">{{res[lang].nav.items[i].name}}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        </div>
+    {% endfor %}
     </div>
+</div>
 {% endblock content %}

@@ -14,7 +14,7 @@
 
 <head>
     {# Initialize localization data #}
-    {% set_global res = load_data(path=config.extra.path_language_resources ~ 'all.toml') %}
+    {% set_global res = load_data(path=config.extra.path_language_resources) %}
     {% set locale = res[lang].settings_locale | default(value="en") %}
     {% set date_locale = res[lang].settings_date_locale | default(value="en_US") %}
     {% set date_format = res[lang].settings_date_format | default(value="%B %d, %Y") %}
@@ -91,10 +91,8 @@
                 <div class="copyright copyright--user">{{ config.extra.copyright_html | safe }}</div>
             {% else %}
                 <div class="copyright">
-                    {%- if config.extra.author %}
-                        <div>© {{ date_macros::now_year() }} {{ config.extra.author }}</div>
-                    {% else %}
-                        <div>© {{ date_macros::now_year() }} Powered by <a href="https://www.getzola.org/">Zola</a></div>
+                    {%- if config.author %}
+                        <div>© {{ date_macros::now_year() }} {{ config.author }}</div>
                     {% endif -%}
                     <div class="copyright-theme">
                         <div>Theme: <a href="https://github.com/cblanken/zola-theme-terminimal/">Terminimal</a></div>

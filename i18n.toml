@@ -1,0 +1,123 @@
+# =======
+# ENGLISH
+# =======
+
+# Global settings
+[en]
+settings_locale = "en"
+settings_date_locale = "en_US"
+settings_date_format = "%b %d, %Y"
+read_more = "Read more"
+previous_posts = "Previous posts"
+next_posts = "Next posts"
+published = "Published"
+last_edited = "Last edited"
+reading_time = "Reading time"
+toc = "Table of Contents"
+source_code = "Source code"
+demo = "Demo"
+
+# Navigation menu
+[en.nav]
+items = [
+    {name = "About", url = "about"},
+    {name = "Articles", url = "articles"},
+    {name = "Journal", url = "journal"},
+    {name = "Projects", url = "projects"},
+    {name = "Archive", url = "archive"},
+    {name = "Tags", url = "tags"},
+    {name = "RSS", url = "feeds"},
+    {name = "GitHub", url = "https://github.com/cblanken", newtab = true, external=true}
+]
+newer_posts = "Newer posts"
+older_posts = "Older posts"
+
+# Nouns with singular and plural
+[en.words]
+single = "word"
+plural = "words"
+
+[en.minutes]
+single = "minute"
+plural = "minutes"
+
+[en.posts]
+single = "post"
+plural = "posts"
+
+[en.tags]
+single = "tag"
+plural = "tags"
+
+[en.feeds]
+combined_title = "Combined feed"
+
+[en.errors]
+lost = "404"
+404 = "This page does not exist"
+empty_section = "There's no content for this section yet."
+
+# =======
+# DEUTSCH
+# =======
+
+# Global German settings
+[de]
+settings_locale = "de"
+settings_date_locale = "de_DE"
+settings_date_format = "%d. %b %Y"
+read_more = "Mehr lesen"
+previous_posts = "Jüngere Beiträge"
+next_posts = "Ältere Beiträge"
+published = "Veröffentlicht"
+last_edited = "Letzte Bearbeitung"
+reading_time = "Lesezeit"
+toc = "Inhaltsübersicht"
+source_code = "Quellcode"
+demo = "Demo"
+
+# Navigation menu
+[de.nav]
+items = [
+    {name = "Über mich", url = "about"},
+    {name = "Artikeln", url = "articles"},
+    {name = "Tagebuch", url = "journal"},
+    {name = "Projekte", url = "projects"},
+    {name = "Archiv", url = "archive"},
+    {name = "Kennzeichen", url = "tags"},
+    {name = "RSS", url = "feeds"},
+    {name = "GitHub", url = "https://github.com/cblanken", newtab = true, external = true},
+]
+newer_posts = "Neuere Beiträge"
+older_posts = "Ältere Beiträge"
+
+# Nouns with singular and plural
+[de.words]
+single = "Wort"
+plural = "Wörter"
+
+[de.minutes]
+single = "Minute"
+plural = "Minuten"
+
+[de.posts]
+single = "Beitrag"
+plural = "Beiträge"
+
+[de.tags]
+single = "Kennzeichen"
+plural = "Kennzeichen"
+
+[de.feeds]
+combined_title = "Feeds kombiniert"
+
+
+[de.errors]
+lost = "404"
+404 = "Diese Seite existiert nicht"
+empty_section = "Für diesen Bereich gibt es noch keinen Inhalt."
+
+
+
+
+
