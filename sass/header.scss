@@ -21,15 +21,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: $header-height;
   }
 
   &__logo {
     display: flex;
     flex: 1;
+    height: 100%;
 
     &:after {
       content: '';
-      background: repeating-linear-gradient(90deg, var(--accent), var(--accent) 8px, transparent 0, transparent 18px);
+      background: repeating-linear-gradient(90deg, var(--accent), var(--accent) 8px, transparent 0, transparent 20px);
       display: block;
       width: 100%;
       right: 10px;
@@ -93,5 +95,84 @@
         }
       }
     }
+  }
+}
+
+#change-lang {
+  height: 100%;
+  background: var(--background);
+
+  svg {
+    max-width: 50px;
+    color: var(--accent);
+  }
+
+  select {
+    height: $header-height;
+    border: solid 2px var(--border-color);
+    border-radius: 5px;
+    outline: none;
+    color: var(--accent);
+    background: var(--background);
+    padding: 0 0.5rem 0 0;
+  }
+
+  select>button {
+    height: $header-height;
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+
+    svg {
+      height: 100%;
+    }
+  }
+
+  select::picker-icon {
+    display: none;
+  }
+
+  select:open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    &::picker-icon {
+      rotate: 180deg;
+    }
+
+    &::picker {
+      opacity: 100%;
+    }
+  }
+
+  select,
+  ::picker(select) {
+    appearance: base-select;
+    transition: ease-out 0.4s rotate;
+    border: none;
+  }
+
+  ::picker(select) {
+    opacity: 0;
+    transition: all 0.6s allow-discrete;
+  }
+
+  ::picker(select):popover-open {
+    opacity: 1;
+  }
+
+  @starting-style {
+    ::picker(select):popover-open {
+      opacity: 0;
+    }
+  }
+
+  select>option {
+    transition: 0.1s;
+  }
+
+  select:hover,
+  select:focus {
+    color: var(--accent-1);
   }
 }
