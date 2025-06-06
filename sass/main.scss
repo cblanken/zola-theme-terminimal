@@ -241,6 +241,18 @@ pre[data-lang=c] {
   }
 }
 
+pre[data-lang=cron] {
+  &::before {
+    content: "Cron"
+  }
+}
+
+pre[data-lang=csharp] {
+  &::before {
+    content: "C#";
+  }
+}
+
 pre[data-lang=diff] {
   border: none;
 
@@ -248,12 +260,6 @@ pre[data-lang=diff] {
     content: "Diff";
     background: linear-gradient(to right, $add-color 50%, $del-color 50%);
     color: $code-dark;
-  }
-}
-
-pre[data-lang=csharp] {
-  &::before {
-    content: "C#";
   }
 }
 
@@ -276,6 +282,15 @@ pre[data-lang=http] {
     content: "HTTP";
   }
 }
+
+pre[data-lang=lua] {
+  &::before {
+    content: "Lua";
+    background: $code-lua;
+    color: $code-light;
+  }
+}
+
 
 pre[data-lang=php] {
   border-color: $code-php;
@@ -314,14 +329,6 @@ pre[data-lang=rust] {
     content: "Rust";
     background: $code-rust;
     color: $code-dark;
-  }
-}
-
-pre[data-lang=lua] {
-  &::before {
-    content: "Lua";
-    background: $code-lua;
-    color: $code-light;
   }
 }
 
