@@ -47,7 +47,7 @@ h6 {
 h1 {
   font-size: 3.3rem;
   font-weight: 800;
-  margin-block-start: 1.5rem;
+  margin-block-start: 0;
 }
 
 h2 {
@@ -154,7 +154,6 @@ code {
   background: var(--code-inline-bg);
   width: 100%;
   white-space: nowrap;
-  padding-inline: 2px;
   padding-block: 1px;
 }
 
@@ -163,6 +162,7 @@ pre {
   font-size: .95rem;
   overflow: auto;
   border-radius: 3px;
+  padding-block-start: 0.25rem;
   white-space: pre-wrap;
 
 
@@ -171,16 +171,36 @@ pre {
     white-space: nowrap;
   }
 
+
   code {
+    display: block;
     margin: 0;
     background: none;
-    display: inline-block;
     white-space: pre-wrap;
+
+    td {
+      border: none;
+      padding: 0;
+      padding-inline: 0.25rem;
+    }
+
+  }
+
+  code>span,
+  code>mark {
+    padding-inline-start: 0.25rem;
+  }
+}
+
+pre[data-linenos] {
+  tr td:first-child {
+    background: $code-nums-bg;
   }
 }
 
 pre[data-lang] {
   position: relative;
+  border: 3px solid $code-border;
 
   &::before {
     content: "Code";
@@ -197,7 +217,7 @@ pre[data-lang] {
   }
 
   code {
-    margin-top: 1.5rem;
+    margin-top: calc(1.5rem - 2px);
 
     table {
       border: none;
@@ -206,28 +226,25 @@ pre[data-lang] {
       padding: 0;
       height: 100%;
 
-      td {
-        border: none;
-        padding: 0;
-      }
-
       td:first-of-type {
         width: 2rem;
-        text-align: center;
+        text-align: right;
         vertical-align: top;
         user-select: none;
       }
     }
   }
-
 }
 
 /* ------------------------- */
 /* Code block banners        */
 /* ------------------------- */
 pre[data-lang=bash] {
+  border-color: $code-bash;
+
   &::before {
     content: "Bash";
+    background: $code-bash;
   }
 }
 
@@ -270,6 +287,12 @@ pre[data-lang=msg] {
   }
 }
 
+pre[data-lang=gitlog] {
+  &::before {
+    content: "Git Log"
+  }
+}
+
 pre[data-lang=html] {
   &::before {
     content: "HTML";
@@ -284,6 +307,8 @@ pre[data-lang=http] {
 }
 
 pre[data-lang=lua] {
+  border-color: $code-lua;
+
   &::before {
     content: "Lua";
     background: $code-lua;
@@ -291,6 +316,11 @@ pre[data-lang=lua] {
   }
 }
 
+pre[data-lang=md] {
+  &::before {
+    content: "Markdown";
+  }
+}
 
 pre[data-lang=php] {
   border-color: $code-php;
@@ -338,11 +368,30 @@ pre[data-lang=sql] {
   }
 }
 
+pre[data-lang=txt] {
+  border-color: $code-txt;
+
+  &::before {
+    content: "Text";
+    background: $code-txt;
+  }
+}
+
 pre[data-lang=console],
 pre[data-lang=terminal],
 pre[data-lang=term] {
   &::before {
     content: "Terminal";
+  }
+}
+
+pre[data-lang=sh] {
+  border-color: $code-shell;
+
+  &::before {
+    content: "Shell";
+    background: $code-shell;
+    color: $code-light;
   }
 }
 
