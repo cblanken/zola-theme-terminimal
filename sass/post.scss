@@ -310,8 +310,17 @@
             }
           }
         }
+
       }
     }
+  }
+
+  footer.footnotes {
+    margin-block-start: 2rem;
+    padding-block-start: 1rem;
+    border-block-start-width: 0.5rem;
+    border-block-start-color: var(--border-color);
+    border-block-start-style: dotted;
   }
 }
 
