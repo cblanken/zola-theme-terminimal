@@ -242,14 +242,13 @@
       left: calc(-1 * var(--toc-width) - 3rem);
       width: var(--toc-width);
       min-width: 200px;
-      max-height: 96vh;
-      overflow-y: auto;
+      height: 96vh;
       margin-top: 1rem;
       padding-block: 1rem;
+      padding-inline: 0.25rem;
       background: var(--toc-bg);
       border-top: 4px solid var(--accent);
       border-bottom: 4px solid var(--accent);
-      font-size: 1rem;
 
       @media (max-width: 1400px) {
         position: relative;
@@ -276,11 +275,17 @@
         font-weight: 600;
         text-align: center;
         margin-block-end: 10px;
+        display: block;
+      }
+
+      .toc-items-container {
+        height: calc(96vh - 8rem);
+        overflow-y: auto;
       }
 
       ol.toc-items {
         counter-reset: h1-count 0;
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding-inline-start: 1rem;
       }
 
