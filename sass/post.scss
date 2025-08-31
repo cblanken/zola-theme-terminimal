@@ -377,6 +377,7 @@
 .post-content::selection,
 .post-content *::selection {
   background: var(--accent-1);
+  color: var(--color-hover);
 }
 
 .langs-block {
