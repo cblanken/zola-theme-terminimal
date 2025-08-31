@@ -243,6 +243,7 @@
       width: var(--toc-width);
       min-width: 200px;
       height: 96vh;
+      max-height: fit-content;
       margin-top: 1rem;
       padding-block: 1rem;
       padding-inline: 0.25rem;
@@ -280,6 +281,7 @@
 
       .toc-items-container {
         height: calc(96vh - 8rem);
+        max-height: fit-content;
         overflow-y: auto;
       }
 
