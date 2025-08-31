@@ -185,17 +185,16 @@ pre {
     }
 
   }
-
-  code>span,
-  code>mark {
-    padding-inline-start: 0.25rem;
-  }
 }
 
 pre[data-linenos] {
   tr td:first-child {
     background: $code-nums-bg;
   }
+}
+
+pre:not([data-linenos]) {
+  padding-inline-start: 0.25rem;
 }
 
 pre[data-lang] {
