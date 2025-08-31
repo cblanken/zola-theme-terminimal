@@ -294,6 +294,8 @@ pre[data-lang=gitlog] {
 }
 
 pre[data-lang=html] {
+  border-color: $code-html;
+
   &::before {
     content: "HTML";
     background: $code-html;
