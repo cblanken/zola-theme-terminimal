@@ -100,7 +100,7 @@ page.translations | length > 1 %}
 {% endmacro header %} {% macro list_posts(pages, res) %}
 <div class="post-list">
   {%- for page in pages %} {%- if page.draft %} {% continue %} {% endif -%}
-  <div>
+  <div class="post-date-wrapper">
     <div class="post-date">
       {{ page.date | date(format=res[lang].settings_date_format) }}
     </div>
@@ -114,7 +114,7 @@ page.translations | length > 1 %}
     </div>
     {% endif %}
   </div>
-  <div class="post-title-tags">
+  <div class="post-title-wrapper">
     <a class="post-list-title" href="{{ page.permalink | safe }}"
       >{{ page.title }}
     </a>
