@@ -194,29 +194,29 @@ pre[data-linenos] {
 }
 
 pre:not([data-linenos]) {
-  padding-inline-start: 0.25rem;
+  padding-inline-start: 0;
 }
 
-pre[data-lang] {
+pre {
   position: relative;
-  border: 3px solid $code-border;
 
-  &::before {
-    content: "Code";
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    padding-left: 0.5rem;
-    width: 100%;
-    background: $code-border;
-    color: $code-dark;
-    font-weight: bold;
-    font-family: $font-mono;
-  }
-
-  code {
+  code[data-lang] {
     margin-top: calc(1.5rem - 2px);
+    border: 3px solid $code-border;
+
+    &::before {
+      content: "Code";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      padding-left: 0.5rem;
+      width: 100%;
+      background: $code-border;
+      color: $code-dark;
+      font-weight: bold;
+      font-family: $font-mono;
+    }
 
     table {
       border: none;
@@ -238,167 +238,169 @@ pre[data-lang] {
 /* ------------------------- */
 /* Code block banners        */
 /* ------------------------- */
-pre[data-lang=bash] {
-  border-color: $code-bash;
+pre {
+  code[data-lang=bash] {
+    border-color: $code-bash;
 
-  &::before {
-    content: "Bash";
-    background: $code-bash;
+    &::before {
+      content: "Bash";
+      background: $code-bash;
+    }
   }
-}
 
-pre[data-lang=c] {
-  border-color: $code-c;
+  code[data-lang=c] {
+    border-color: $code-c;
 
-  &::before {
-    content: "C";
-    background: $code-c;
-    color: white;
+    &::before {
+      content: "C";
+      background: $code-c;
+      color: white;
+    }
   }
-}
 
-pre[data-lang=cron] {
-  &::before {
-    content: "Cron"
+  code[data-lang=cron] {
+    &::before {
+      content: "Cron"
+    }
   }
-}
 
-pre[data-lang=csharp] {
-  &::before {
-    content: "C#";
+  code[data-lang=csharp] {
+    &::before {
+      content: "C#";
+    }
   }
-}
 
-pre[data-lang=diff] {
-  border: none;
+  code[data-lang=diff] {
+    border: none;
 
-  &::before {
-    content: "Diff";
-    background: linear-gradient(to right, $add-color 50%, $del-color 50%);
-    color: $code-dark;
+    &::before {
+      content: "Diff";
+      background: linear-gradient(to right, $add-color 50%, $del-color 50%);
+      color: $code-dark;
+    }
   }
-}
 
-pre[data-lang=eml],
-pre[data-lang=msg] {
-  &::before {
-    content: "Email";
+  code[data-lang=eml],
+  code[data-lang=msg] {
+    &::before {
+      content: "Email";
+    }
   }
-}
 
-pre[data-lang=gitlog] {
-  &::before {
-    content: "Git Log"
+  code[data-lang=gitlog] {
+    &::before {
+      content: "Git Log"
+    }
   }
-}
 
-pre[data-lang=html] {
-  border-color: $code-html;
+  code[data-lang=html] {
+    border-color: $code-html;
 
-  &::before {
-    content: "HTML";
-    background: $code-html;
+    &::before {
+      content: "HTML";
+      background: $code-html;
+    }
   }
-}
 
-pre[data-lang=http] {
-  &::before {
-    content: "HTTP";
+  code[data-lang=http] {
+    &::before {
+      content: "HTTP";
+    }
   }
-}
 
-pre[data-lang=lua] {
-  border-color: $code-lua;
+  code[data-lang=lua] {
+    border-color: $code-lua;
 
-  &::before {
-    content: "Lua";
-    background: $code-lua;
-    color: $code-light;
+    &::before {
+      content: "Lua";
+      background: $code-lua;
+      color: $code-light;
+    }
   }
-}
 
-pre[data-lang=md] {
-  &::before {
-    content: "Markdown";
+  code[data-lang=md] {
+    &::before {
+      content: "Markdown";
+    }
   }
-}
 
-pre[data-lang=php] {
-  border-color: $code-php;
+  code[data-lang=php] {
+    border-color: $code-php;
 
-  &::before {
-    content: "PHP";
-    background: $code-php;
-    color: black;
+    &::before {
+      content: "PHP";
+      background: $code-php;
+      color: black;
+    }
   }
-}
 
-pre[data-lang=powershell] {
-  border-color: $code-powershell;
+  code[data-lang=powershell] {
+    border-color: $code-powershell;
 
-  &::before {
-    content: "Powershell";
-    background: $code-powershell;
-    color: white;
+    &::before {
+      content: "Powershell";
+      background: $code-powershell;
+      color: white;
+    }
   }
-}
 
-pre[data-lang=python] {
-  border-color: $code-python;
+  code[data-lang=python] {
+    border-color: $code-python;
 
-  &::before {
-    content: "Python";
-    background: $code-python;
-    color: $code-dark;
+    &::before {
+      content: "Python";
+      background: $code-python;
+      color: $code-dark;
+    }
   }
-}
 
-pre[data-lang=rust] {
-  border-color: $code-rust;
+  code[data-lang=rust] {
+    border-color: $code-rust;
 
-  &::before {
-    content: "Rust";
-    background: $code-rust;
-    color: $code-dark;
+    &::before {
+      content: "Rust";
+      background: $code-rust;
+      color: $code-dark;
+    }
   }
-}
 
-pre[data-lang=sql] {
-  &::before {
-    content: "SQL";
+  code[data-lang=sql] {
+    &::before {
+      content: "SQL";
+    }
   }
-}
 
-pre[data-lang=txt] {
-  border-color: $code-txt;
+  code[data-lang=txt] {
+    border-color: $code-txt;
 
-  &::before {
-    content: "Text";
-    background: $code-txt;
+    &::before {
+      content: "Text";
+      background: $code-txt;
+    }
   }
-}
 
-pre[data-lang=console],
-pre[data-lang=terminal],
-pre[data-lang=term] {
-  &::before {
-    content: "Terminal";
+  code[data-lang=console],
+  code[data-lang=terminal],
+  code[data-lang=term] {
+    &::before {
+      content: "Terminal";
+    }
   }
-}
 
-pre[data-lang=sh] {
-  border-color: $code-shell;
+  code[data-lang=sh] {
+    border-color: $code-shell;
 
-  &::before {
-    content: "Shell";
-    background: $code-shell;
-    color: $code-light;
+    &::before {
+      content: "Shell";
+      background: $code-shell;
+      color: $code-light;
+    }
   }
-}
 
-pre[data-lang=file] {
-  &::before {
-    content: "File";
+  code[data-lang=file] {
+    &::before {
+      content: "File";
+    }
   }
 }
 
