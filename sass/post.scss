@@ -399,15 +399,17 @@
   color: var(--color-hover);
 }
 
-.callout {
-  background: var(--callout-bg);
-  color: var(--callout-color);
-  border-left: 8px solid;
-  padding: 10px;
-  border-radius: 4px;
-  padding: 20px;
-  margin: 1rem 0;
-  font-size: 1.25rem;
+
+.err-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .icon {
@@ -415,25 +417,35 @@
   height: 1.5rem;
 }
 
-.caution {
-  color: var(--color-caution);
-}
 
-.warning {
-  color: var(--color-warning);
-}
+/* Admonitions */
+.markdown-alert-note,
+.markdown-alert-tip,
+.markdown-alert-important,
+.markdown-alert-warning,
+.markdown-alert-caution {
+  background: var(--callout-bg);
+  color: var(--callout-color);
+  border: none;
+  border-left: 8px solid;
+  padding: 10px;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 1rem 0;
+  font-size: 1.25rem;
 
-.important {
-  color: var(--color-important);
-}
+  &>p::before {
+    content: none;
+  }
 
-.tip {
-  color: var(--color-tip);
-
-}
-
-.note {
-  color: var(--color-note);
+  &::before {
+    content: "";
+    display: block;
+    margin-block-end: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+  }
 }
 
 .callout-head {
@@ -446,22 +458,42 @@
 }
 
 
-.callout-text {
-  color: var(--color);
+.markdown-alert-note {
+  color: var(--color-note) !important;
+
+  &::before {
+    content: "Note";
+  }
 }
 
-.callout-text>p:last-of-type {
-  margin-bottom: 0;
+.markdown-alert-tip {
+  color: var(--color-tip) !important;
+
+  &::before {
+    content: "Tip";
+  }
 }
 
-.err-404 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.markdown-alert-important {
+  color: var(--color-important);
+
+  &::before {
+    content: "Important";
+  }
 }
 
-.grid-auto {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+.markdown-alert-warning {
+  color: var(--color-warning);
+
+  &::before {
+    content: "Warning";
+  }
+}
+
+.markdown-alert-caution {
+  color: var(--color-caution);
+
+  &::before {
+    content: "Caution";
+  }
 }
