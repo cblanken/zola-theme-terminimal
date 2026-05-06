@@ -12,24 +12,12 @@ Please note that earlier (and older) versions might not work because of breaking
 
 #### Fork disclaimer
 
-This theme is a fork (not a port) of "Terminal" Hugo theme
+This theme was originall a fork (not a port) of "Terminal" Hugo theme
 by Radosław Kozieł (aka. panr):
 https://github.com/panr/hugo-theme-terminal
 
-Many thanks for that outstanding original theme, Radek!
+Many thanks for that outstanding original theme, Radek and many thanks to paworoman for the fork to Zola!
 
-For more information about this fork and the differences to the original theme, please see:
-[Changes compared to the original theme](#changes-compared-to-the-original-theme) below.
-
-## Versioning
-
-This theme used to be non-versioned, e.g. you'd pull the master branch, and occasionally new features or fixes would
-be released.
-
-Starting from version v1.0.0, the project adopted [Semantic Versioning](https://semver.org/).
-
-Please check the [GitHub releases](https://github.com/pawroman/zola-theme-terminimal/releases) to see a change log
-and work out if there's any breaking changes.
 
 ## How to start
 
@@ -279,9 +267,8 @@ post_view_navigation_prompt = "Read more"
 
 ### Language code
 
-Internationalization / translation is not supported
-but you can set the HTML language code for your
-site:
+Internationalization / translation partially supported.
+See [i18n.toml](i18n.toml) for details.
 
 ```toml
 default_language = "en"
@@ -363,61 +350,11 @@ base template, `index.html`, create file like this in `templates/index.html`:
 {% endblock %}
 ```
 
-## How to contribute
-
-If you spot any bugs or wish to contribute new features, please create a new
-[Pull Request](https://github.com/pawroman/zola-theme-terminimal/pulls).
-
-## Changes compared to the original theme
-
-This theme has been forked from https://github.com/panr/hugo-theme-terminal
-
-- Slight changes in the layout and styling.
-  - Content has been centered (instead of left-aligned).
-  - The header stripes have been spaced out.
-  - Tweaks to pagination, especially on mobile (small screens).
-  - The post title underline is dashed instead of doubly-dotted.
-  - All links are underlined, as per
-    [Brutalist Web Design Guidelines](https://www.brutalist-web.design/).
-  - Tweaks to header font sizes.
-  - Minor footer tweaks.
-
-- Absolutely **no JavaScript**.
-  - No JavaScript needed to pre-process anything.
-    Zola with its Sass pre-processor is the only dependency.
-  - There's no menu trigger.
-  - Things load crazy fast, as it's all static content.
-  - Prism.js syntax highlighting is not supported (you can use
-    [Zola's](https://www.getzola.org/documentation/content/syntax-highlighting/)).
-
-- All references to social media (e.g. Twitter) have been removed.
-
-- All references to external URLs (e.g. Google CDN) have been removed.
-  This theme's static assets are meant to be served from where it's hosted.
-
-- [Hack](https://github.com/source-foundry/Hack) is the default font.
-
-- The default color theme is blue (original uses orange).
-
-### New features
-
-- You can pick the accent color as well as background color.
-  There's a new `dark` background. See [Configuration](#configuration)
-  below for details.
-- Active "section" links will change color indicating the
-  active section. This is all static, done at template level.
-
-### Features retained from the original
-
-- 5 color themes, depending on your preference:
-  blue (default), green, orange, pink, red.
-- The shortcodes `image` and `figure` (See [Shortcodes](#shortcodes)).
-- Fully responsive.
-
 ## License
 
-Copyright © 2019 Paweł Romanowski (pawroman)
+Copyright © 2026-present Cameron Blankenbuehler (cblanken)
 
+Original fork: Copyright © 2019 Paweł Romanowski ([paworoman](https://github.com/pawroman))
 Original theme: Copyright © 2019 Radosław Kozieł ([@panr](https://twitter.com/panr))
 
 The theme is released under the MIT License.

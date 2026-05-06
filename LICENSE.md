@@ -1,5 +1,7 @@
 MIT License
 
+Copyright (c) 2026 Cameron Blankenbuehler
+
 Copyright (c) 2019 Paweł Romanowski
 
 Copyright (c) 2019 panr
