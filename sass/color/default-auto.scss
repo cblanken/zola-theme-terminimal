@@ -13,6 +13,10 @@
   --accent-1: light-dark(rgb(111, 129, 199, .8), rgba(255, 168, 106, .8));
   --accent-2: light-dark(rgb(111, 129, 199, .2), rgba(255, 168, 106, .2));
 
+  --accent: light-dark(rgb(103, 99, 87, 1), rgba(255, 168, 106, 1));
+  --accent-1: light-dark(rgb(103, 99, 87, .8), rgba(255, 168, 106, .8));
+  --accent-2: light-dark(rgb(103, 99, 87, .2), rgba(255, 168, 106, .2));
+
   --color-hover: light-dark(white, black);
 
   /* Tags */
@@ -31,7 +35,7 @@
   /* Code blocks */
   --code-inline-bg: light-dark(#f3f3f3, #555555);
 
-  /* Callout blocks */
+  /* Admonition blocks */
   --callout-bg: light-dark(rgb(240 234 209), #0d0c0d);
   --callout-color: light-dark(var(--color), var(--color));
 
