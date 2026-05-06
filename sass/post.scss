@@ -54,14 +54,14 @@
   text-align: left;
   font-family: $font-body;
   line-height: 1.7rem;
-  padding-block-end: 1.5rem;
+  padding-block: 32px;
 
   @media (max-width: $tablet-max-width) {
     max-width: 660px;
   }
 
   &:not(:last-of-type) {
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
   }
 
   %meta {
