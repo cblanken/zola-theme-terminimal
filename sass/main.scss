@@ -183,6 +183,8 @@ pre {
     margin: 0;
     background: none;
     white-space: pre-wrap;
+    text-wrap-mode: nowrap;
+    overflow-x: auto;
 
     td {
       border: none;
@@ -190,6 +192,13 @@ pre {
       padding-inline: 0.25rem;
     }
 
+    .giallo-l {
+      padding-inline-start: 4px;
+
+      .giallo-ln {
+        padding-inline-end: 8px;
+      }
+    }
   }
 }
 
