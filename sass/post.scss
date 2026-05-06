@@ -285,8 +285,8 @@
       }
 
       .toc-items-container {
-        height: calc(96vh - 8rem);
-        max-height: fit-content;
+        max-height: calc(96vh - 8rem);
+        height: fit-content;
         overflow-y: auto;
       }
 
