@@ -170,7 +170,7 @@
   .tag-list {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 0.25rem;
+    row-gap: 0.65rem;
     column-gap: 0.5rem;
     text-align: justify;
   }
@@ -179,10 +179,12 @@
     color: var(--tag-color);
     background: var(--tag-bg);
     white-space: nowrap;
-    padding: 0 0.5rem;
+    padding: 0 0.75rem;
     border-radius: 1000px;
     font-family: $font-mono;
     line-height: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
   }
 
   .post-tag:hover {
