@@ -105,6 +105,12 @@ img {
 p {
   margin-block-start: 1rem;
   margin-block-end: 1.7rem;
+  overflow-x: auto;
+  overflow-y: hidden
+}
+
+mjx-container svg {
+  margin-block: 1rem;
 }
 
 figure {
