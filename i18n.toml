@@ -22,7 +22,6 @@ demo = "Demo"
 items = [
     {name = "About", url = "about"},
     {name = "Blog", url = "blog"},
-    {name = "Journal", url = "journal"},
     {name = "TIL", url = "til"},
     {name = "Projects", url = "projects"},
     {name = "Archive", url = "archive"},
@@ -82,7 +81,6 @@ demo = "Demo"
 items = [
     {name = "Über mich", url = "about"},
     {name = "Blog", url = "blog"},
-    {name = "Tagebuch", url = "journal"},
     {name = "TIL", url = "til"},
     {name = "Projekte", url = "projects"},
     {name = "Archiv", url = "archive"},
