@@ -21,7 +21,7 @@ demo = "Demo"
 [en.nav]
 items = [
     {name = "About", url = "about"},
-    {name = "Articles", url = "articles"},
+    {name = "Blog", url = "blog"},
     {name = "Journal", url = "journal"},
     {name = "TIL", url = "til"},
     {name = "Projects", url = "projects"},
@@ -81,7 +81,7 @@ demo = "Demo"
 [de.nav]
 items = [
     {name = "Über mich", url = "about"},
-    {name = "Artikeln", url = "articles"},
+    {name = "Blog", url = "blog"},
     {name = "Tagebuch", url = "journal"},
     {name = "TIL", url = "til"},
     {name = "Projekte", url = "projects"},
