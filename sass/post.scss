@@ -4,7 +4,7 @@
 .projects {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 32px;
   width: 100%;
   margin: 0 auto;
 }
@@ -54,7 +54,7 @@
   text-align: left;
   font-family: $font-body;
   line-height: 1.7rem;
-  padding-block: 32px;
+  padding-block-end: 32px;
 
   @media (max-width: $tablet-max-width) {
     max-width: 660px;
@@ -113,8 +113,7 @@
   %tags {
     font-size: 1rem;
     opacity: .9;
-    margin-block-start: 0.5rem;
-    margin-block-end: 0.25rem;
+    margin-block: 0.5rem;
   }
 
   &-tags {
