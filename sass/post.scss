@@ -10,23 +10,28 @@
 }
 
 .project-title-card {
-  display: flex;
+  display: grid;
   gap: 2rem;
   padding-block-end: 1rem;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: $tablet-max-width) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &>a {
+    display: block;
+    border-bottom: none !important;
+  }
 
   img {
-    width: 48%;
     object-fit: cover;
-
     border-inline-start: 5px solid var(--accent-1);
     border-block-start: 5px solid var(--accent-1);
     border-inline-end: 5px solid var(--accent-2);
     border-block-end: 5px solid var(--accent-2);
     border-radius: 10px;
-
-    @media (max-width: $tablet-max-width) {
-      display: none;
-    }
   }
 }
 
