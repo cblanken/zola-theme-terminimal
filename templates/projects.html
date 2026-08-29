@@ -19,7 +19,7 @@
                     <a href="{{ page.permalink }}"><img src="/images/{{ page.extra.project_image }}" /></a>
                 {% endif -%}
                 <div>
-                    {{ post_macros::header(page=page, res=res) }}
+                    {{ <header page={page} res={res} lang={lang} /> }}
                     {{ page.description }}
                 </div>
             </div>

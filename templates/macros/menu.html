@@ -1,4 +1,4 @@
-{% macro menu(config, current_path, res) %}
+{% component menu(config, current_path, res, lang) %}
     {% set current_item = false %}
     {% if res[lang].nav.items %}
         {% set menu_items = res[lang].nav.items %}
@@ -26,11 +26,11 @@
                 {% set current_item = base_item %}
             {% endif %}
 
-            {{ menu_macros::menu_for(config=config, current_item=current_item, res=res) }}
+            {{ <menu_for config={config} current_item={current_item} res={res} lang={lang} /> }}
     {% endif %}
-{% endmacro menu %}
+{% endcomponent menu %}
 
-{% macro menu_for(config, current_item, res) %}
+{% component menu_for(config, current_item, res, lang) %}
     {% if res[lang].nav.items %}
         {% set menu_items = res[lang].nav.items %}
         <nav class="menu">
@@ -61,5 +61,5 @@
             </ul>
         </nav>
     {% endif %}
-{% endmacro menu %}
+{% endcomponent menu_for %}
 
